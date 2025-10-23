@@ -1,0 +1,13 @@
+disabled_rules:
+  - line_length
+  - todo
+
+opt_in_rules:
+  - force_unwrapping
+
+excluded:
+  - Carthage
+  - Pods
+  - Generated
+
+reporter: "xcode"
