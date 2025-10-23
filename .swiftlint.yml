@@ -4,10 +4,27 @@ disabled_rules:
 
 opt_in_rules:
   - force_unwrapping
+  - force_try
+  - force_cast
+  - implicitly_unwrapped_optional
+  - redundant_nil_coalescing
+  - unused_import
+  - vertical_whitespace_between_cases
 
 excluded:
   - Carthage
   - Pods
   - Generated
+  - DerivedData
+
+# TODO/FIXME policy
+# Require a ticket tag like TODO(IT-1234):
+custom_rules:
+  todo_ticket:
+    included: ".*\\.swift"
+    name: "TODO must reference ticket"
+    regex: "(TODO|FIXME)(?!\\([A-Z]+-\\d+\\))"
+    message: "Use TODO(TICKET-123) or FIXME(TICKET-123)."
+    severity: warning
 
 reporter: "xcode"
