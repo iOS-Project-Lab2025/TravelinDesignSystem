@@ -1,24 +1,24 @@
 #if canImport(SwiftUI)
 import SwiftUI
 
-// MARK: - ¿Qué es este archivo?
-// Aquí definimos un botón reutilizable para nuestro Design System.
-// Está hecho con SwiftUI.
-// Es una sola variación: un botón azul, redondeado, con texto blanco.
+// MARK: - What is this file?
+// Here we define a reusable button for our Design System.
+// It is built with SwiftUI.
+// Single variation: a blue, rounded button with white text.
 
 // MARK: - DSPrimaryButton
-/// El botón de nuestro Design System.
+/// The button from our Design System.
 ///
-/// Cómo usarlo (ejemplo):
+/// How to use it (example):
 /// ```swift
 /// DSPrimaryButton(title: "Next") {
-///     // Aquí pones lo que pasa cuando tocas el botón
+///     // Put here what should happen when the button is tapped
 /// }
 /// ```
 ///
-/// Notas:
-/// - Por ahora los colores están "hardcodeados" (escritos a mano).
-/// - Más adelante, coordinamos para cambiar por "tokens" del Design System.
+/// Notes:
+/// - For now, colors are hardcoded.
+/// - Later, we will switch to Design System tokens.
 @available(iOS 17.0, macOS 13.0, *)
 public struct DSPrimaryButton: View {
     private let title: String
@@ -44,8 +44,8 @@ public struct DSPrimaryButton: View {
     }
 }
 
-// MARK: - Estilo del botón
-/// `ButtonStyle` usado junto a PrimaryCapsuleStyle para darle estilo específico al botón
+// MARK: - Button style
+/// `ButtonStyle` used with PrimaryCapsuleStyle to give the button its specific style
 @available(iOS 17.0, macOS 13.0, *)
 private struct PrimaryCapsuleStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -61,8 +61,8 @@ private struct PrimaryCapsuleStyle: ButtonStyle {
     }
 }
 
-// MARK: - Vista previa (solo en desarrollo)
-// Esto sirve para ver el botón en Xcode sin correr la app.
+// MARK: - Preview (development only)
+// This lets you see the button in Xcode without running the app.
 #if DEBUG
 @available(iOS 17.0, macOS 13.0, *)
 #Preview("DSPrimaryButton") {
@@ -74,5 +74,6 @@ private struct PrimaryCapsuleStyle: ButtonStyle {
 #endif
 
 #endif
+
 
 
