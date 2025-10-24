@@ -10,42 +10,57 @@ import SwiftUI
 public extension DesignTokens {
     
     enum Colors {
-        // --- Brand / Action Colors ---
                 
-        /// The primary interactive color.
-        /// (Loaded from Asset Catalog)
+        // --- Brand / Action ---
+                
+        /// The primary interactive color for buttons and main actions.
         public static let primaryAction: Color = Color("primaryAction", bundle: .module)
         
-        /// The color for text placed on top of a `primaryAction` background.
-        public static let textOnAction: Color = .white
+        /// The secondary interactive color for less prominent actions (e.g., secondary buttons).
+        public static let secondaryAction: Color = Color("secondaryAction", bundle: .module)
+        
+        /// A color for text and icons placed on top of a `primaryAction` background.
+        public static let textOnAction: Color = Color("textOnAction", bundle: .module)
 
         
-        // --- Neutral Colors ---
-
-        /// The primary background color for main views.
-        public static let primaryBackground: Color = .white
-        
+        // --- Text ---
+                
         /// The main color for body text, headings.
-        public static let primaryText: Color = .black
+        public static let primaryText: Color = Color("primaryText", bundle: .module)
         
         /// A subdued color for subtitles, captions, or helper text.
-        /// (Loaded from Asset Catalog)
         public static let secondaryText: Color = Color("secondaryText", bundle: .module)
+        
+        /// The lightest text color, often for placeholders or disabled text.
+        public static let tertiaryText: Color = Color("tertiaryText", bundle: .module)
+        
+        /// The color for tappable link text.
+        public static let linkText: Color = Color("linkText", bundle: .module)
+        
+        // --- Backgrounds / Surfaces ---
+                
+        public static let primaryBackground: Color = Color("primaryBackground", bundle: .module)
+        
+        public static let secondaryBackground: Color = Color("secondaryBackground", bundle: .module)
+        
+        public static let tertiaryBackground: Color = Color("tertiaryBackground", bundle: .module)
+        
+        // --- UI / Borders ---
+
+        public static let border: Color = Color("border", bundle: .module)
+        
+        public static let separator: Color = Color("separator", bundle: .module)
 
         
-        // --- Standard System Colors (Aliases) ---
+        // --- Semantic / Status ---
         
-        /// Pure white.
-        public static let white: Color = .white
+        public static let success: Color = Color("success", bundle: .module)
         
-        /// Pure black.
-        public static let black: Color = .black
+        public static let warning: Color = Color("warning", bundle: .module)
         
-        /// Alias for primaryAction.
-        public static let primaryBlueSky: Color = Color("primaryAction", bundle: .module)
+        public static let error: Color = Color("error", bundle: .module)
         
-        /// Alias for secondaryText.
-        public static let grey: Color = Color("secondaryText", bundle: .module)
+        public static let info: Color = Color("info", bundle: .module)
     }
     
 }
