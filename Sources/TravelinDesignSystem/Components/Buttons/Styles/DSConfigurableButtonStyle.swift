@@ -60,8 +60,8 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
             let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) // Estado pressed más oscuro
             return isPressed ? pressed : base
         case .secondary:
-            let base = Color(red: 0xF3/255.0, green: 0xF3/255.0, blue: 0xF3/255.0) // #F3F3F3
-            let pressed = Color(red: 0.90, green: 0.90, blue: 0.90)
+            let base = Color(red: 0.95, green: 0.95, blue: 0.95) // Gris claro según specs
+            let pressed = Color(red: 0.85, green: 0.85, blue: 0.85) // Estado pressed más oscuro
             return isPressed ? pressed : base
         case .outline:
             let pressed = Color(.sRGB, white: 0.95, opacity: 1)
@@ -78,7 +78,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
         case .primary:
             return .white // #FFFFFF
         case .secondary:
-            return Color(red: 0x79/255.0, green: 0x79/255.0, blue: 0x79/255.0) // #797979
+            return Color(red: 0.47, green: 0.47, blue: 0.47) // Gris medio según specs
         case .outline:
             return .black // #000000
         case .dark:
