@@ -12,7 +12,8 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
         let isPressed = configuration.isPressed
         
         frameModifier(configuration.label)
-            .font(.custom("Poppins-Medium", size: 14))
+            .font(.custom("Poppins", size: 14).weight(.medium))
+            .multilineTextAlignment(.center)
             .padding(.vertical, verticalPadding)
             .padding(.horizontal, horizontalPadding)
             .foregroundColor(self.foregroundColor(isPressed: isPressed))
@@ -30,9 +31,9 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     @ViewBuilder
     private func frameModifier(_ label: Configuration.Label) -> some View {
         if fullWidth {
-            label.frame(maxWidth: .infinity)
+            label.frame(maxWidth: .infinity, alignment: .top)
         } else {
-            label 
+            label.frame(maxWidth: .infinity, alignment: .top)
         }
     }
     
@@ -55,8 +56,8 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     private func backgroundColor(isPressed: Bool) -> Color {
         switch style {
         case .primary:
-            let base = Color(red: 0x0F/255.0, green: 0xA3/255.0, blue: 0xE2/255.0) // #0FA3E2
-            let pressed = Color(red: 0.0, green: 0.58, blue: 0.82)
+            let base = Color(red: 0.06, green: 0.64, blue: 0.89) // Azul primario según specs
+            let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) // Estado pressed más oscuro
             return isPressed ? pressed : base
         case .secondary:
             let base = Color(red: 0xF3/255.0, green: 0xF3/255.0, blue: 0xF3/255.0) // #F3F3F3
