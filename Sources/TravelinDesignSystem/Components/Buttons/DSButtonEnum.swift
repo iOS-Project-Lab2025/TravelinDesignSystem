@@ -14,8 +14,8 @@ public enum DSButtonStyle {
     case primary
     /// Fondo gris #F3F3F3, texto gris #797979. (Back)
     case secondary
-    /// Fondo blanco, texto negro. (Back to home)
-    case outline
+    /// Fondo blanco, texto negro, sin borde. (Back to home)
+    case ghost
     /// Fondo gris oscuro, texto blanco. (+100 Photos)
     case dark
 }

@@ -27,6 +27,7 @@ public struct DSButton: View {
     private let style: DSButtonStyle
     private let size: DSButtonSize
     private let fullWidth: Bool
+    private let fixedWidth: CGFloat?
     private let action: () -> Void
 
     public init(
@@ -34,12 +35,14 @@ public struct DSButton: View {
         style: DSButtonStyle = .primary,
         size: DSButtonSize = .large,
         fullWidth: Bool = false,
+        fixedWidth: CGFloat? = nil,
         action: @escaping () -> Void
     ) {
         self.title = title
         self.style = style
         self.size = size
         self.fullWidth = fullWidth
+        self.fixedWidth = fixedWidth
         self.action = action
     }
 
@@ -50,7 +53,8 @@ public struct DSButton: View {
         .buttonStyle(DSConfigurableButtonStyle(
             style: self.style,
             size: self.size,
-            fullWidth: self.fullWidth
+            fullWidth: self.fullWidth,
+            fixedWidth: self.fixedWidth
         ))
         .accessibility(label: Text(title))
     }

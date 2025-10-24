@@ -6,6 +6,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     let style: DSButtonStyle
     let size: DSButtonSize
     let fullWidth: Bool
+    let fixedWidth: CGFloat?
 
     // MARK: - Body
     public func makeBody(configuration: Configuration) -> some View {
@@ -30,7 +31,10 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     
     @ViewBuilder
     private func frameModifier(_ label: Configuration.Label) -> some View {
-        if fullWidth {
+        if let fixedWidth = fixedWidth {
+            label
+                .frame(width: fixedWidth, alignment: .center)
+        } else if fullWidth {
             label.frame(maxWidth: .infinity, alignment: .top)
         } else {
             label.frame(maxWidth: .infinity, alignment: .top)
@@ -63,7 +67,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
             let base = Color(red: 0.95, green: 0.95, blue: 0.95) // Gris claro según specs
             let pressed = Color(red: 0.85, green: 0.85, blue: 0.85) // Estado pressed más oscuro
             return isPressed ? pressed : base
-        case .outline:
+        case .ghost:
             let pressed = Color(.sRGB, white: 0.95, opacity: 1)
             return isPressed ? pressed : .white
         case .dark:
@@ -79,7 +83,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
             return .white // #FFFFFF
         case .secondary:
             return Color(red: 0.47, green: 0.47, blue: 0.47) // Gris medio según specs
-        case .outline:
+        case .ghost:
             return .black // #000000
         case .dark:
             return .white
@@ -88,10 +92,8 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     
     private func borderColor(isPressed: Bool) -> Color {
         switch style {
-        case .primary, .secondary, .dark:
+        case .primary, .secondary, .dark, .ghost:
             return .clear
-        case .outline:
-            return .black
         }
     }
 }
