@@ -6,24 +6,22 @@ import PackageDescription
 let package = Package(
     name: "TravelinDesignSystem",
     platforms: [
-            .macOS(.v12),  // Esto equivale a tu "@available(macOS 10.15, *)"
-            .iOS(.v17)        // Esta es la versión mínima para SwiftUI en iOS
-        ],
+        .iOS(.v17),
+        .macOS(.v13),
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "TravelinDesignSystem",
-            targets: ["TravelinDesignSystem"]),
+            targets: ["TravelinDesignSystem"]
+        ),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins.git", from: "0.62.1"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "TravelinDesignSystem",
-            resources: [
-                .process("Assets.xcassets")
-            ]
-        )
-
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "swiftlintplugins")]
+        ),
     ]
 )
