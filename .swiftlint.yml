@@ -2,13 +2,15 @@ disabled_rules:
   - line_length
   - todo
 
+analyzer_rules:
+  - unused_import
+
 opt_in_rules:
   - force_unwrapping
   - force_try
   - force_cast
   - implicitly_unwrapped_optional
   - redundant_nil_coalescing
-  - unused_import
   - vertical_whitespace_between_cases
 
 excluded:
