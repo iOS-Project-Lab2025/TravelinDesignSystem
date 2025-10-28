@@ -22,6 +22,8 @@ public enum DSButtonVariant {
     case transparent
     /// Dark gray background, white text. (+100 Photos)
     case dark
+    /// Fully transparent background, black icon, no border. (Navigation icon buttons)
+    case icon
 }
 
 /// Defines the size (height and padding) of the button

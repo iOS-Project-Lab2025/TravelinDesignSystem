@@ -138,6 +138,9 @@ public struct DSButtonStyle: ButtonStyle {
             let base = Color(red: 0.32, green: 0.32, blue: 0.32, opacity: 0.8)
             let pressed = Color(red: 0.25, green: 0.25, blue: 0.25, opacity: 0.8)
             return isPressed ? pressed : base
+        case .icon:
+            let pressed = Color.black.opacity(0.1)
+            return isPressed ? pressed : .clear
         }
     }
     
@@ -155,12 +158,14 @@ public struct DSButtonStyle: ButtonStyle {
             return .black // #000000
         case .dark:
             return .white
+        case .icon:
+            return .black // #000000
         }
     }
     
     private func borderColor(isPressed: Bool) -> Color {
         switch variant {
-        case .primary, .secondary, .dark, .ghost:
+        case .primary, .secondary, .dark, .ghost, .icon:
             return .clear
         case .outline:
             return .black

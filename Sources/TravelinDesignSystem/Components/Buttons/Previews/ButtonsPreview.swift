@@ -23,10 +23,21 @@ import SwiftUI
         
         DSButton(title: "Back to home", variant: .ghost, size: .large, fixedWidth: 295) { }
         
-        Divider().padding(.vertical,2)
-        
-        Text("Icon Buttons")
-            .font(.headline)
+        HStack(spacing: 17) {
+            DSButton(
+                title: "+100 Photos",
+                variant: .dark,
+                size: .compact,
+                fixedWidth: 73
+            ) { }
+            
+            DSButton(
+                title: "See all +20 photos",
+                variant: .outline,
+                size: .compact,
+                fixedWidth: 156
+            ) { }
+        }
         
         DSButton(
             title: "Oversea",
@@ -37,25 +48,6 @@ import SwiftUI
         ) { }
         
         DSButton(
-            title: "+100 Photos",
-            variant: .dark,
-            size: .compact,
-            fixedWidth: 73
-        ) { }
-        
-        DSButton(
-            title: "See all +20 photos",
-            variant: .outline,
-            size: .compact,
-            fixedWidth: 156
-        ) { }
-        
-        Divider().padding(.vertical,2)
-        
-        Text("Menu Button")
-            .font(.headline)
-        
-        DSButton(
             title: "Edit profile",
             icon: Image(systemName: "person.circle"),
             trailingIcon: Image(systemName: "chevron.right"),
@@ -64,14 +56,26 @@ import SwiftUI
             fixedWidth: 323
         ) { }
         
-        Divider().padding(.vertical,2)
-        
-        Text("Favorite Button")
-            .font(.headline)
-        
         HStack(spacing: 20) {
             DSFavoriteButton(isFavorite: .constant(false))
             DSFavoriteButton(isFavorite: .constant(true))
+        }
+        
+        Text("Icon Buttons")
+            .font(.headline)
+        
+        HStack(spacing: 20) {
+            DSButton(
+                icon: Image(systemName: "chevron.left"),
+                variant: .icon,
+                size: .medium
+            ) { }
+            
+            DSButton(
+                icon: Image(systemName: "chevron.right"),
+                variant: .icon,
+                size: .medium
+            ) { }
         }
     }
     .padding()

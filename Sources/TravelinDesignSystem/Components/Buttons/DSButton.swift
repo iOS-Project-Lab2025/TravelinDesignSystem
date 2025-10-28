@@ -35,7 +35,7 @@ public struct DSButton: View {
     private let title: String?
     private let icon: Image?
     private let iconPosition: IconPosition
-    private let trailingIcon: Image? // New: right icon (chevron)
+    private let trailingIcon: Image?
     private let variant: DSButtonVariant
     private let size: DSButtonSize
     private let fullWidth: Bool
@@ -137,8 +137,8 @@ public struct DSButton: View {
     private var iconColor: Color {
         // Icon color based on button variant
         switch variant {
-        case .transparent:
-            return .black // Black for transparent variant
+        case .transparent, .icon:
+            return .black // Black for transparent and icon variants
         default:
             return Color(red: 0.14, green: 0.72, blue: 0.96) // Blue for other variants
         }
