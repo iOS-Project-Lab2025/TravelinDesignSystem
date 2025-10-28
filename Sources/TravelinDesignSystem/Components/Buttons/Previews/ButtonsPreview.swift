@@ -35,6 +35,16 @@ import SwiftUI
             size: .small,
             fixedWidth: 131
         ) { }
+        
+        Divider().padding(.vertical,2)
+        
+        Text("Favorite Button")
+            .font(.headline)
+        
+        HStack(spacing: 20) {
+            DSFavoriteButton(isFavorite: .constant(false))
+            DSFavoriteButton(isFavorite: .constant(true))
+        }
     }
     .padding()
     .background(Color(red: 0.92, green: 0.92, blue: 0.92))
