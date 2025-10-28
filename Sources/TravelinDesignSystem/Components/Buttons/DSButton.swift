@@ -100,13 +100,13 @@ public struct DSButton: View {
     private var buttonContent: some View {
         if let title = title, let icon = icon {
             // Texto con ícono
-            HStack(spacing: 8) {
+            HStack(spacing: iconSpacing) {
                 if iconPosition == .leading {
-                    icon
+                    icon.foregroundColor(iconColor)
                     Text(title)
                 } else {
                     Text(title)
-                    icon
+                    icon.foregroundColor(iconColor)
                 }
             }
         } else if let title = title {
@@ -114,7 +114,23 @@ public struct DSButton: View {
             Text(title)
         } else if let icon = icon {
             // Solo ícono
-            icon
+            icon.foregroundColor(iconColor)
+        }
+    }
+    
+    private var iconColor: Color {
+        // Color específico para el ícono del botón Oversea (y similares)
+        return Color(red: 0.14, green: 0.72, blue: 0.96)
+    }
+    
+    private var iconSpacing: CGFloat {
+        switch size {
+        case .large:
+            return 8
+        case .medium:
+            return 8
+        case .small:
+            return 6
         }
     }
 }

@@ -22,10 +22,12 @@ public enum DSButtonStyle {
 
 /// Define el tamaño (altura y padding) del botón
 public enum DSButtonSize {
-    /// 52px de altura, 15px radius, 17px padding vertical.
+    /// 52px de altura, 15px radius, 17px padding vertical, 14px font.
     case large
     /// 42px de altura, 6px radius, 12px padding vertical.
     case medium
+    /// Botón compacto, 14px radius, 12px padding vertical, 12px font. (Oversea)
+    case small
 }
 
 #endif

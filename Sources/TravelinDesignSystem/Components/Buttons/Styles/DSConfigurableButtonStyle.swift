@@ -13,7 +13,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
         let isPressed = configuration.isPressed
         
         frameModifier(configuration.label)
-            .font(.custom("Poppins", size: 14).weight(.medium))
+            .font(.custom("Poppins", size: fontSize).weight(.medium))
             .multilineTextAlignment(.center)
             .padding(.vertical, verticalPadding)
             .padding(.horizontal, horizontalPadding)
@@ -43,16 +43,48 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     
     // MARK: - Lógica de Tamaño (Tokens)
     
+    private var fontSize: CGFloat {
+        switch size {
+        case .large:
+            return 14
+        case .medium:
+            return 14
+        case .small:
+            return 12
+        }
+    }
+    
     private var verticalPadding: CGFloat {
-        return 17 // Todos usan 17px según specs
+        switch size {
+        case .large:
+            return 17
+        case .medium:
+            return 12
+        case .small:
+            return 12
+        }
     }
     
     private var horizontalPadding: CGFloat {
-        return 20 // Todos usan 20px según specs
+        switch size {
+        case .large:
+            return 20
+        case .medium:
+            return 20
+        case .small:
+            return 15
+        }
     }
     
     private var cornerRadius: CGFloat {
-        return 15 // Todos usan 15px según specs
+        switch size {
+        case .large:
+            return 15
+        case .medium:
+            return 15
+        case .small:
+            return 14
+        }
     }
 
     // MARK: - Lógica de Estilo (Tokens)
