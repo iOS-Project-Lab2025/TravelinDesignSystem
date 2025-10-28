@@ -8,8 +8,8 @@
 #if canImport(SwiftUI)
 import SwiftUI
 
-/// Define el estilo visual del botón
-public enum DSButtonStyle {
+/// Define la variante visual del botón
+public enum DSButtonVariant {
     /// Fondo azul #0FA3E2, texto blanco. (Book Now)
     case primary
     /// Fondo gris #F3F3F3, texto gris #797979. (Back)

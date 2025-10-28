@@ -17,11 +17,11 @@ import SwiftUI
             .font(.headline)
         
         HStack(spacing: 17) {
-            DSButton(title: "Book Now", style: .primary, size: .large) { }
-            DSButton(title: "Back", style: .secondary, size: .large) { }
+            DSButton(title: "Book Now", variant: .primary, size: .large) { }
+            DSButton(title: "Back", variant: .secondary, size: .large) { }
         }
         
-        DSButton(title: "Back to home", style: .ghost, size: .large, fixedWidth: 295) { }
+        DSButton(title: "Back to home", variant: .ghost, size: .large, fixedWidth: 295) { }
         
         Divider().padding(.vertical,2)
         
@@ -31,7 +31,7 @@ import SwiftUI
         DSButton(
             title: "Oversea",
             icon: Image(systemName: "airplane"),
-            style: .ghost,
+            variant: .ghost,
             size: .small,
             fixedWidth: 131
         ) { }

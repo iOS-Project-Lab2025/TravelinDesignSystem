@@ -2,8 +2,8 @@
 import SwiftUI
 
 @available(iOS 17.0, macOS 13.0, *)
-public struct DSConfigurableButtonStyle: ButtonStyle {
-    let style: DSButtonStyle
+public struct DSButtonStyle: ButtonStyle {
+    let variant: DSButtonVariant
     let size: DSButtonSize
     let fullWidth: Bool
     let fixedWidth: CGFloat?
@@ -90,7 +90,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     // MARK: - Lógica de Estilo (Tokens)
 
     private func backgroundColor(isPressed: Bool) -> Color {
-        switch style {
+        switch variant {
         case .primary:
             let base = Color(red: 0.06, green: 0.64, blue: 0.89) // Azul primario según specs
             let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) // Estado pressed más oscuro
@@ -110,7 +110,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     }
     
     private func foregroundColor(isPressed: Bool) -> Color {
-        switch style {
+        switch variant {
         case .primary:
             return .white // #FFFFFF
         case .secondary:
@@ -123,7 +123,7 @@ public struct DSConfigurableButtonStyle: ButtonStyle {
     }
     
     private func borderColor(isPressed: Bool) -> Color {
-        switch style {
+        switch variant {
         case .primary, .secondary, .dark, .ghost:
             return .clear
         }

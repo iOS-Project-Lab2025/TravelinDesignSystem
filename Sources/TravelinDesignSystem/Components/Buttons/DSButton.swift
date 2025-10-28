@@ -11,28 +11,28 @@ import SwiftUI
 // MARK: - DSButton
 /// El botón estándar y reutilizable del Design System.
 ///
-/// Acepta un estilo (primary, secondary, etc.) y un tamaño (large, medium).
+/// Acepta una variante (primary, secondary, etc.) y un tamaño (large, medium).
 /// Puede mostrar texto, ícono o ambos.
 ///
 /// ```swift
 /// // Solo texto
-/// DSButton(title: "Book Now", style: .primary, size: .large) { ... }
+/// DSButton(title: "Book Now", variant: .primary, size: .large) { ... }
 ///
 /// // Texto con ícono a la izquierda
-/// DSButton(title: "Book Now", icon: Image(systemName: "airplane"), style: .primary) { ... }
+/// DSButton(title: "Book Now", icon: Image(systemName: "airplane"), variant: .primary) { ... }
 ///
 /// // Texto con ícono a la derecha
-/// DSButton(title: "Book Now", icon: Image(systemName: "arrow.right"), iconPosition: .trailing, style: .primary) { ... }
+/// DSButton(title: "Book Now", icon: Image(systemName: "arrow.right"), iconPosition: .trailing, variant: .primary) { ... }
 ///
 /// // Solo ícono
-/// DSButton(icon: Image(systemName: "heart"), style: .ghost) { ... }
+/// DSButton(icon: Image(systemName: "heart"), variant: .ghost) { ... }
 /// ```
 @available(iOS 17.0, macOS 13.0, *)
 public struct DSButton: View {
     private let title: String?
     private let icon: Image?
     private let iconPosition: IconPosition
-    private let style: DSButtonStyle
+    private let variant: DSButtonVariant
     private let size: DSButtonSize
     private let fullWidth: Bool
     private let fixedWidth: CGFloat?
@@ -48,7 +48,7 @@ public struct DSButton: View {
         title: String,
         icon: Image? = nil,
         iconPosition: IconPosition = .leading,
-        style: DSButtonStyle = .primary,
+        variant: DSButtonVariant = .primary,
         size: DSButtonSize = .large,
         fullWidth: Bool = false,
         fixedWidth: CGFloat? = nil,
@@ -57,7 +57,7 @@ public struct DSButton: View {
         self.title = title
         self.icon = icon
         self.iconPosition = iconPosition
-        self.style = style
+        self.variant = variant
         self.size = size
         self.fullWidth = fullWidth
         self.fixedWidth = fixedWidth
@@ -67,7 +67,7 @@ public struct DSButton: View {
     // Inicializador para botón solo con ícono
     public init(
         icon: Image,
-        style: DSButtonStyle = .primary,
+        variant: DSButtonVariant = .primary,
         size: DSButtonSize = .large,
         fullWidth: Bool = false,
         fixedWidth: CGFloat? = nil,
@@ -76,7 +76,7 @@ public struct DSButton: View {
         self.title = nil
         self.icon = icon
         self.iconPosition = .leading
-        self.style = style
+        self.variant = variant
         self.size = size
         self.fullWidth = fullWidth
         self.fixedWidth = fixedWidth
@@ -87,8 +87,8 @@ public struct DSButton: View {
         Button(action: action) {
             buttonContent
         }
-        .buttonStyle(DSConfigurableButtonStyle(
-            style: self.style,
+        .buttonStyle(DSButtonStyle(
+            variant: self.variant,
             size: self.size,
             fullWidth: self.fullWidth,
             fixedWidth: self.fixedWidth
