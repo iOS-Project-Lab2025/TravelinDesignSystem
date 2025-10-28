@@ -9,29 +9,33 @@
 import SwiftUI
 
 // MARK: - DSButton
-/// El botón estándar y reutilizable del Design System.
+/// The standard and reusable Design System button.
 ///
-/// Acepta una variante (primary, secondary, etc.) y un tamaño (large, medium).
-/// Puede mostrar texto, ícono o ambos.
+/// Accepts a variant (primary, secondary, etc.) and a size (large, medium).
+/// Can display text, icon, or both.
 ///
 /// ```swift
-/// // Solo texto
+/// // Text only
 /// DSButton(title: "Book Now", variant: .primary, size: .large) { ... }
 ///
-/// // Texto con ícono a la izquierda
+/// // Text with icon on the left
 /// DSButton(title: "Book Now", icon: Image(systemName: "airplane"), variant: .primary) { ... }
 ///
-/// // Texto con ícono a la derecha
+/// // Text with icon on the right
 /// DSButton(title: "Book Now", icon: Image(systemName: "arrow.right"), iconPosition: .trailing, variant: .primary) { ... }
 ///
-/// // Solo ícono
+/// // Icon only
 /// DSButton(icon: Image(systemName: "heart"), variant: .ghost) { ... }
+///
+/// // Menu style with two icons
+/// DSButton(title: "Edit profile", icon: Image(systemName: "person.circle"), trailingIcon: Image(systemName: "chevron.right"), variant: .transparent) { ... }
 /// ```
 @available(iOS 17.0, macOS 13.0, *)
 public struct DSButton: View {
     private let title: String?
     private let icon: Image?
     private let iconPosition: IconPosition
+    private let trailingIcon: Image? // New: right icon (chevron)
     private let variant: DSButtonVariant
     private let size: DSButtonSize
     private let fullWidth: Bool
@@ -48,6 +52,7 @@ public struct DSButton: View {
         title: String,
         icon: Image? = nil,
         iconPosition: IconPosition = .leading,
+        trailingIcon: Image? = nil,
         variant: DSButtonVariant = .primary,
         size: DSButtonSize = .large,
         fullWidth: Bool = false,
@@ -57,6 +62,7 @@ public struct DSButton: View {
         self.title = title
         self.icon = icon
         self.iconPosition = iconPosition
+        self.trailingIcon = trailingIcon
         self.variant = variant
         self.size = size
         self.fullWidth = fullWidth
@@ -64,7 +70,7 @@ public struct DSButton: View {
         self.action = action
     }
     
-    // Inicializador para botón solo con ícono
+    // Initializer for icon-only button
     public init(
         icon: Image,
         variant: DSButtonVariant = .primary,
@@ -76,6 +82,7 @@ public struct DSButton: View {
         self.title = nil
         self.icon = icon
         self.iconPosition = .leading
+        self.trailingIcon = nil
         self.variant = variant
         self.size = size
         self.fullWidth = fullWidth
@@ -98,8 +105,17 @@ public struct DSButton: View {
     
     @ViewBuilder
     private var buttonContent: some View {
-        if let title = title, let icon = icon {
-            // Texto con ícono
+        if let trailingIcon = trailingIcon, let title = title, let icon = icon {
+            // Left icon + Text + Right icon (menu style)
+            HStack(spacing: 0) {
+                icon.foregroundColor(iconColor)
+                Spacer().frame(width: iconSpacing)
+                Text(title)
+                Spacer()
+                trailingIcon.foregroundColor(iconColor)
+            }
+        } else if let title = title, let icon = icon {
+            // Text with icon
             HStack(spacing: iconSpacing) {
                 if iconPosition == .leading {
                     icon.foregroundColor(iconColor)
@@ -110,17 +126,22 @@ public struct DSButton: View {
                 }
             }
         } else if let title = title {
-            // Solo texto
+            // Text only
             Text(title)
         } else if let icon = icon {
-            // Solo ícono
+            // Icon only
             icon.foregroundColor(iconColor)
         }
     }
     
     private var iconColor: Color {
-        // Color específico para el ícono del botón Oversea (y similares)
-        return Color(red: 0.14, green: 0.72, blue: 0.96)
+        // Icon color based on button variant
+        switch variant {
+        case .transparent:
+            return .black // Black for transparent variant
+        default:
+            return Color(red: 0.14, green: 0.72, blue: 0.96) // Blue for other variants
+        }
     }
     
     private var iconSpacing: CGFloat {
@@ -133,6 +154,8 @@ public struct DSButton: View {
             return 6
         case .compact:
             return 6
+        case .menu:
+            return 10
         }
     }
 }

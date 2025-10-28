@@ -52,6 +52,20 @@ import SwiftUI
         
         Divider().padding(.vertical,2)
         
+        Text("Menu Button")
+            .font(.headline)
+        
+        DSButton(
+            title: "Edit profile",
+            icon: Image(systemName: "person.circle"),
+            trailingIcon: Image(systemName: "chevron.right"),
+            variant: .transparent,
+            size: .menu,
+            fixedWidth: 323
+        ) { }
+        
+        Divider().padding(.vertical,2)
+        
         Text("Favorite Button")
             .font(.headline)
         

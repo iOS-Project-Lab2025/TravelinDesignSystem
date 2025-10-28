@@ -9,7 +9,7 @@
 import SwiftUI
 
 // MARK: - DSFavoriteButton
-/// Botón de favorito con estado toggle (corazón vacío/lleno).
+/// Favorite button with toggle state (empty/filled heart).
 ///
 /// ```swift
 /// @State private var isFavorite = false
@@ -32,13 +32,13 @@ public struct DSFavoriteButton: View {
         }) {
             ZStack {
                 if isFavorite {
-                    // Corazón lleno (rojo)
+                    // Filled heart (red)
                     Image(systemName: "heart.fill")
                         .resizable()
                         .frame(width: Tokens.iconWidth, height: Tokens.iconHeight)
                         .foregroundColor(Tokens.favoriteColor)
                 } else {
-                    // Corazón vacío (negro outline)
+                    // Empty heart (black outline)
                     Image(systemName: "heart")
                         .resizable()
                         .frame(width: Tokens.iconWidth, height: Tokens.iconHeight)
@@ -54,12 +54,12 @@ public struct DSFavoriteButton: View {
     
     // MARK: - Tokens
     private enum Tokens {
-        // Tamaños
+        // Sizes
         static let buttonSize: CGFloat = 36
         static let iconWidth: CGFloat = 17
         static let iconHeight: CGFloat = 15
         
-        // Colores
+        // Colors
         static let backgroundColor: Color = .white
         static let defaultColor: Color = .black
         static let favoriteColor: Color = Color(red: 1, green: 0.42, blue: 0.42)

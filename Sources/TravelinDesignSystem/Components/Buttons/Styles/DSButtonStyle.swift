@@ -27,7 +27,7 @@ public struct DSButtonStyle: ButtonStyle {
             .animation(.easeInOut(duration: 0.15), value: isPressed)
     }
     
-    // MARK: - Modificadores
+    // MARK: - Modifiers
     
     @ViewBuilder
     private func frameModifier(_ label: Configuration.Label) -> some View {
@@ -41,7 +41,7 @@ public struct DSButtonStyle: ButtonStyle {
         }
     }
     
-    // MARK: - Lógica de Tamaño (Tokens)
+    // MARK: - Size Tokens Logic
     
     private var fontSize: CGFloat {
         switch size {
@@ -53,11 +53,13 @@ public struct DSButtonStyle: ButtonStyle {
             return 12
         case .compact:
             return 12
+        case .menu:
+            return 15
         }
     }
     
     private var fontWeight: Font.Weight {
-        // Outline variant usa semibold, los demás medium
+        // Outline variant uses semibold, others use medium
         switch variant {
         case .outline:
             return .semibold
@@ -76,6 +78,8 @@ public struct DSButtonStyle: ButtonStyle {
             return 12
         case .compact:
             return 12
+        case .menu:
+            return 20
         }
     }
     
@@ -88,6 +92,8 @@ public struct DSButtonStyle: ButtonStyle {
         case .small:
             return 15
         case .compact:
+            return 20
+        case .menu:
             return 15
         }
     }
@@ -102,20 +108,22 @@ public struct DSButtonStyle: ButtonStyle {
             return 14
         case .compact:
             return 6
+        case .menu:
+            return 15
         }
     }
-
-    // MARK: - Lógica de Estilo (Tokens)
+    
+    // MARK: - Style Tokens Logic
 
     private func backgroundColor(isPressed: Bool) -> Color {
         switch variant {
         case .primary:
-            let base = Color(red: 0.06, green: 0.64, blue: 0.89) // Azul primario según specs
-            let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) // Estado pressed más oscuro
+            let base = Color(red: 0.06, green: 0.64, blue: 0.89) // Primary blue per specs
+            let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) // Darker pressed state
             return isPressed ? pressed : base
         case .secondary:
-            let base = Color(red: 0.95, green: 0.95, blue: 0.95) // Gris claro según specs
-            let pressed = Color(red: 0.85, green: 0.85, blue: 0.85) // Estado pressed más oscuro
+            let base = Color(red: 0.95, green: 0.95, blue: 0.95) // Light gray per specs
+            let pressed = Color(red: 0.85, green: 0.85, blue: 0.85) // Darker pressed state
             return isPressed ? pressed : base
         case .ghost:
             let pressed = Color(.sRGB, white: 0.95, opacity: 1)
@@ -123,6 +131,9 @@ public struct DSButtonStyle: ButtonStyle {
         case .outline:
             let pressed = Color(.sRGB, white: 0.95, opacity: 1)
             return isPressed ? pressed : .white
+        case .transparent:
+            let pressed = Color(.sRGB, white: 0.95, opacity: 0.5)
+            return isPressed ? pressed : .clear
         case .dark:
             let base = Color(red: 0.32, green: 0.32, blue: 0.32, opacity: 0.8)
             let pressed = Color(red: 0.25, green: 0.25, blue: 0.25, opacity: 0.8)
@@ -135,10 +146,12 @@ public struct DSButtonStyle: ButtonStyle {
         case .primary:
             return .white // #FFFFFF
         case .secondary:
-            return Color(red: 0.47, green: 0.47, blue: 0.47) // Gris medio según specs
+            return Color(red: 0.47, green: 0.47, blue: 0.47) // Medium gray per specs
         case .ghost:
             return .black // #000000
         case .outline:
+            return .black // #000000
+        case .transparent:
             return .black // #000000
         case .dark:
             return .white
@@ -151,6 +164,8 @@ public struct DSButtonStyle: ButtonStyle {
             return .clear
         case .outline:
             return .black
+        case .transparent:
+            return Color.black.opacity(0.1) // Light gray border
         }
     }
 }

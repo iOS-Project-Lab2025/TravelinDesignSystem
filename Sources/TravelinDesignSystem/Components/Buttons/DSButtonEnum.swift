@@ -8,30 +8,34 @@
 #if canImport(SwiftUI)
 import SwiftUI
 
-/// Define la variante visual del botón
+/// Defines the visual variant of the button
 public enum DSButtonVariant {
-    /// Fondo azul #0FA3E2, texto blanco. (Book Now)
+    /// Blue background #0FA3E2, white text. (Book Now)
     case primary
-    /// Fondo gris #F3F3F3, texto gris #797979. (Back)
+    /// Gray background #F3F3F3, gray text #797979. (Back)
     case secondary
-    /// Fondo blanco, texto negro, sin borde. (Back to home)
+    /// White background, black text, no border. (Back to home)
     case ghost
-    /// Fondo blanco, texto negro, con borde negro. (See all +20 photos)
+    /// White background, black text, with black border. (See all +20 photos)
     case outline
-    /// Fondo gris oscuro, texto blanco. (+100 Photos)
+    /// Transparent background, black text, with light gray border. (Edit profile)
+    case transparent
+    /// Dark gray background, white text. (+100 Photos)
     case dark
 }
 
-/// Define el tamaño (altura y padding) del botón
+/// Defines the size (height and padding) of the button
 public enum DSButtonSize {
-    /// 52px de altura, 15px radius, 17px padding vertical, 14px font.
+    /// 52px height, 15px radius, 17px vertical padding, 14px font.
     case large
-    /// 42px de altura, 6px radius, 12px padding vertical.
+    /// 42px height, 6px radius, 12px vertical padding.
     case medium
-    /// Botón compacto, 14px radius, 12px padding vertical, 12px font. (Oversea)
+    /// Compact button, 14px radius, 12px vertical padding, 12px font. (Oversea)
     case small
-    /// Botón muy compacto, 6px radius, 12px padding vertical, 30px horizontal, 12px font. (+100 Photos)
+    /// Very compact button, 6px radius, 12px vertical padding, 29px horizontal, 12px font. (+100 Photos)
     case compact
+    /// Menu-style button, 15px radius, 20px vertical padding, 15px horizontal, 15px font. (Edit profile)
+    case menu
 }
 
 #endif
