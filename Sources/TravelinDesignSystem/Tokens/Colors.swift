@@ -10,9 +10,9 @@ import SwiftUI
 public extension DesignTokens {
     
     enum Colors {
-                
+        
         // --- Brand / Action ---
-                
+        
         /// The primary interactive color for buttons and main actions.
         public static let primaryAction: Color = Color("primaryAction", bundle: .module)
         
@@ -22,9 +22,8 @@ public extension DesignTokens {
         /// A color for text and icons placed on top of a `primaryAction` background.
         public static let textOnAction: Color = Color("textOnAction", bundle: .module)
 
-        
         // --- Text ---
-                
+        
         /// The main color for body text, headings.
         public static let primaryText: Color = Color("primaryText", bundle: .module)
         
@@ -38,7 +37,7 @@ public extension DesignTokens {
         public static let linkText: Color = Color("linkText", bundle: .module)
         
         // --- Backgrounds / Surfaces ---
-                
+        
         public static let primaryBackground: Color = Color("primaryBackground", bundle: .module)
         
         public static let secondaryBackground: Color = Color("secondaryBackground", bundle: .module)
