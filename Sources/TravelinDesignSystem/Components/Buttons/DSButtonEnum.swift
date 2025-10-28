@@ -16,6 +16,8 @@ public enum DSButtonVariant {
     case secondary
     /// Fondo blanco, texto negro, sin borde. (Back to home)
     case ghost
+    /// Fondo blanco, texto negro, con borde negro. (See all +20 photos)
+    case outline
     /// Fondo gris oscuro, texto blanco. (+100 Photos)
     case dark
 }

@@ -13,7 +13,7 @@ public struct DSButtonStyle: ButtonStyle {
         let isPressed = configuration.isPressed
         
         frameModifier(configuration.label)
-            .font(.custom("Poppins", size: fontSize).weight(.medium))
+            .font(.custom("Poppins", size: fontSize).weight(fontWeight))
             .multilineTextAlignment(.center)
             .padding(.vertical, verticalPadding)
             .padding(.horizontal, horizontalPadding)
@@ -53,6 +53,16 @@ public struct DSButtonStyle: ButtonStyle {
             return 12
         case .compact:
             return 12
+        }
+    }
+    
+    private var fontWeight: Font.Weight {
+        // Outline variant usa semibold, los demás medium
+        switch variant {
+        case .outline:
+            return .semibold
+        default:
+            return .medium
         }
     }
     
@@ -110,6 +120,9 @@ public struct DSButtonStyle: ButtonStyle {
         case .ghost:
             let pressed = Color(.sRGB, white: 0.95, opacity: 1)
             return isPressed ? pressed : .white
+        case .outline:
+            let pressed = Color(.sRGB, white: 0.95, opacity: 1)
+            return isPressed ? pressed : .white
         case .dark:
             let base = Color(red: 0.32, green: 0.32, blue: 0.32, opacity: 0.8)
             let pressed = Color(red: 0.25, green: 0.25, blue: 0.25, opacity: 0.8)
@@ -125,6 +138,8 @@ public struct DSButtonStyle: ButtonStyle {
             return Color(red: 0.47, green: 0.47, blue: 0.47) // Gris medio según specs
         case .ghost:
             return .black // #000000
+        case .outline:
+            return .black // #000000
         case .dark:
             return .white
         }
@@ -134,6 +149,8 @@ public struct DSButtonStyle: ButtonStyle {
         switch variant {
         case .primary, .secondary, .dark, .ghost:
             return .clear
+        case .outline:
+            return .black
         }
     }
 }
