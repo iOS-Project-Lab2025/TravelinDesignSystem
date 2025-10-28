@@ -36,6 +36,13 @@ import SwiftUI
             fixedWidth: 131
         ) { }
         
+        DSButton(
+            title: "+100 Photos",
+            variant: .dark,
+            size: .compact,
+            fixedWidth: 103
+        ) { }
+        
         Divider().padding(.vertical,2)
         
         Text("Favorite Button")

@@ -51,6 +51,8 @@ public struct DSButtonStyle: ButtonStyle {
             return 14
         case .small:
             return 12
+        case .compact:
+            return 12
         }
     }
     
@@ -61,6 +63,8 @@ public struct DSButtonStyle: ButtonStyle {
         case .medium:
             return 12
         case .small:
+            return 12
+        case .compact:
             return 12
         }
     }
@@ -73,6 +77,8 @@ public struct DSButtonStyle: ButtonStyle {
             return 20
         case .small:
             return 15
+        case .compact:
+            return 30
         }
     }
     
@@ -84,6 +90,8 @@ public struct DSButtonStyle: ButtonStyle {
             return 15
         case .small:
             return 14
+        case .compact:
+            return 6
         }
     }
 

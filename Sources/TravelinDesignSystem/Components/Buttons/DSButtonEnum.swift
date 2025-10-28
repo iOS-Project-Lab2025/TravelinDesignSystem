@@ -28,6 +28,8 @@ public enum DSButtonSize {
     case medium
     /// Botón compacto, 14px radius, 12px padding vertical, 12px font. (Oversea)
     case small
+    /// Botón muy compacto, 6px radius, 12px padding vertical, 30px horizontal, 12px font. (+100 Photos)
+    case compact
 }
 
 #endif

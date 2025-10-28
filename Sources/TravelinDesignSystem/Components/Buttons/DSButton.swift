@@ -131,6 +131,8 @@ public struct DSButton: View {
             return 8
         case .small:
             return 6
+        case .compact:
+            return 6
         }
     }
 }
