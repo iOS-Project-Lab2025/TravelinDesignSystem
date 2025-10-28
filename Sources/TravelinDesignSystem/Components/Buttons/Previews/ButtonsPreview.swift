@@ -40,7 +40,7 @@ import SwiftUI
             title: "+100 Photos",
             variant: .dark,
             size: .compact,
-            fixedWidth: 103
+            fixedWidth: 73
         ) { }
         
         Divider().padding(.vertical,2)

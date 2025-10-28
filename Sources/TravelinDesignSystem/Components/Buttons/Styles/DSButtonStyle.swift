@@ -78,7 +78,7 @@ public struct DSButtonStyle: ButtonStyle {
         case .small:
             return 15
         case .compact:
-            return 30
+            return 15
         }
     }
     
