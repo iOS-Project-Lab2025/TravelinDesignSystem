@@ -35,21 +35,34 @@ public struct DSFavoriteButton: View {
                     // Corazón lleno (rojo)
                     Image(systemName: "heart.fill")
                         .resizable()
-                        .frame(width: 17, height: 15)
-                        .foregroundColor(Color(red: 1, green: 0.42, blue: 0.42))
+                        .frame(width: Tokens.iconWidth, height: Tokens.iconHeight)
+                        .foregroundColor(Tokens.favoriteColor)
                 } else {
                     // Corazón vacío (negro outline)
                     Image(systemName: "heart")
                         .resizable()
-                        .frame(width: 17, height: 15)
-                        .foregroundColor(.black)
+                        .frame(width: Tokens.iconWidth, height: Tokens.iconHeight)
+                        .foregroundColor(Tokens.defaultColor)
                 }
             }
-            .frame(width: 36, height: 36)
-            .background(.white)
+            .frame(width: Tokens.buttonSize, height: Tokens.buttonSize)
+            .background(Tokens.backgroundColor)
             .clipShape(Circle())
         }
         .buttonStyle(PlainButtonStyle())
+    }
+    
+    // MARK: - Tokens
+    private enum Tokens {
+        // Tamaños
+        static let buttonSize: CGFloat = 36
+        static let iconWidth: CGFloat = 17
+        static let iconHeight: CGFloat = 15
+        
+        // Colores
+        static let backgroundColor: Color = .white
+        static let defaultColor: Color = .black
+        static let favoriteColor: Color = Color(red: 1, green: 0.42, blue: 0.42)
     }
 }
 
