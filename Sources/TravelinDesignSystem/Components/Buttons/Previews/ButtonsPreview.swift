@@ -13,7 +13,10 @@ import SwiftUI
 #Preview("Buttons") {
     VStack(alignment: .leading, spacing: 30) {
 
-        Text("Standard Buttons")
+        Text("Buttons")
+            .font(.title).fontWeight(.bold)
+        
+        Text("1) Text")
             .font(.headline)
         
         HStack(spacing: 17) {
@@ -39,6 +42,9 @@ import SwiftUI
             ) { }
         }
         
+        Text("2) Text + Icon")
+            .font(.headline)
+        
         DSButton(
             title: "Oversea",
             icon: Image(systemName: "airplane"),
@@ -46,6 +52,9 @@ import SwiftUI
             size: .small,
             fixedWidth: 131
         ) { }
+        
+        Text("3) Icon + Text + Icon")
+            .font(.headline)
         
         DSButton(
             title: "Edit profile",
@@ -56,27 +65,21 @@ import SwiftUI
             fixedWidth: 323
         ) { }
         
-        HStack(spacing: 20) {
-            DSFavoriteButton(isFavorite: .constant(false))
-            DSFavoriteButton(isFavorite: .constant(true))
-        }
         
-        Text("Icon Buttons")
+        Text("4) Icon")
             .font(.headline)
         
         HStack(spacing: 20) {
+            DSFavoriteButton(isFavorite: .constant(false))
+            DSFavoriteButton(isFavorite: .constant(true))
             DSButton(
                 icon: Image(systemName: "chevron.left"),
                 variant: .icon,
                 size: .medium
             ) { }
-            
-            DSButton(
-                icon: Image(systemName: "chevron.right"),
-                variant: .icon,
-                size: .medium
-            ) { }
+            DSButton(icon: Image(systemName: "chevron.right"), variant: .icon, size: .medium) {}
         }
+        
     }
     .padding()
     .background(Color(red: 0.92, green: 0.92, blue: 0.92))
