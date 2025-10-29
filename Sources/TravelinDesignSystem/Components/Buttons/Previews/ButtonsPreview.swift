@@ -2,7 +2,7 @@
 //  ButtonsPreview.swift
 //  TravelinDesignSystem
 //
-//  Created by Daniel Felipe Retamal Valenzuela on 23-10-25.
+//  Created by Daniel Retamal on 23-10-25.
 //
 
 #if canImport(SwiftUI)
