@@ -138,7 +138,7 @@ public struct ConfigurableTextField: View {
     ///   - style: Visual styling preset. Defaults to `.default`.
     ///   - text: Binding to the text field's value.
     ///   - onSubmit: Optional closure called on submit. Defaults to `nil`.
-    init(
+    public init(
         symbolPosition: SymbolPosition = .none,
         placeHolder: String? = nil,
         type: TextFieldType,
