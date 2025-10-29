@@ -115,13 +115,17 @@ public struct DSButton: View {
                 trailingIcon.foregroundColor(iconColor)
             }
         } else if let title = title, let icon = icon {
-            // Text with icon
-            HStack(spacing: iconSpacing) {
+            // Text with icon - Icon at left edge, text with spacing from icon
+            HStack(spacing: 0) {
                 if iconPosition == .leading {
                     icon.foregroundColor(iconColor)
+                    Spacer().frame(width: iconSpacing)
                     Text(title)
+                    Spacer()
                 } else {
+                    Spacer()
                     Text(title)
+                    Spacer().frame(width: iconSpacing)
                     icon.foregroundColor(iconColor)
                 }
             }

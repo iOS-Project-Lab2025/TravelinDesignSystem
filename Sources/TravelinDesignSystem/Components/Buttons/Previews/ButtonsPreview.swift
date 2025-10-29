@@ -50,7 +50,7 @@ import SwiftUI
             icon: Image(systemName: "airplane"),
             variant: .ghost,
             size: .small,
-            fixedWidth: 131
+            fixedWidth: 90
         ) { }
         
         Text("3) Icon + Text + Icon")
