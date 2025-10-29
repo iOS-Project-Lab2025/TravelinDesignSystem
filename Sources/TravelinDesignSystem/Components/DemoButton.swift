@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct DSButton: View {
+public struct DemoButton: View {
         let title: String
         let action: () -> Void
 
@@ -28,7 +28,7 @@ public struct DSButton: View {
 }
 
 #Preview {
-    DSButton("Test Button", action: {
+    DemoButton("Test Button", action: {
         print("Button tapped!")
     })
     .padding()
