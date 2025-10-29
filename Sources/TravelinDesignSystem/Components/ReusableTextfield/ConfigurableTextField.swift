@@ -25,13 +25,15 @@ import SwiftUI
 /// ## Usage Example
 /// ```swift
 /// ConfigurableTextField(
-///     placeHolder: "Enter your email",
-///     type: .email,
-///     label: "Email Address",
-///     style: .roundedGray,
-///     text: $email,
-///     onSubmit: { submitForm() }
-/// )
+/// placeHolder: "Enter your password",
+/// type: .passwordLetters,
+/// label: "Password",
+/// style: .roundedGray,
+/// text: $passwordLetters
+/// ) {
+/// focusedField = nil //.passwordLetter(pass focus to next Textfield )
+/// }
+/// .focused($focusedField, equals: .passwordLetter)
 /// ```
 ///
 /// - Note: Password fields automatically include a visibility toggle button.
@@ -218,12 +220,12 @@ struct ConfigurableTextField: View {
 
 #Preview {
     ZStack {
-        Color.black
+        Color.white
             .ignoresSafeArea()
         ConfigurableTextField(
-            placeHolder: "Enter your email",
-            type: .email,
-            label: "Email",
+            placeHolder: "Enter your phone",
+            type: .phoneNumber,
+            label: "Phone",
             style: .default,
             text: .constant("")
         )

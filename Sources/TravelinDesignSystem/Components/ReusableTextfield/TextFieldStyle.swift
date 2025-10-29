@@ -87,7 +87,7 @@ enum TextFieldStyle {    /// Standard white background style.
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: DesignTokens.CornerRadius.large)
-                        .stroke(Color(.systemGray4), lineWidth: 1)
+                        .stroke(DesignTokens.Colors.border, lineWidth: 1)
                 )
                 .cornerRadius(DesignTokens.CornerRadius.large)
         }
