@@ -142,24 +142,24 @@ public struct DSButton: View {
         // Icon color based on button variant
         switch variant {
         case .transparent, .icon:
-            return .black // Black for transparent and icon variants
+            return DesignTokens.Colors.primaryText
         default:
-            return Color(red: 0.14, green: 0.72, blue: 0.96) // Blue for other variants
+            return DesignTokens.Colors.iconColor
         }
     }
     
     private var iconSpacing: CGFloat {
         switch size {
         case .large:
-            return 8
+            return DesignTokens.Spacing.small
         case .medium:
-            return 8
+            return DesignTokens.Spacing.small
         case .small:
-            return 6
+            return DesignTokens.Spacing.iconSpacingSmall
         case .compact:
-            return 6
+            return DesignTokens.Spacing.iconSpacingSmall
         case .menu:
-            return 10
+            return DesignTokens.Spacing.iconSpacingMenu
         }
     }
 }

@@ -35,34 +35,30 @@ public struct DSFavoriteButton: View {
                     // Filled heart (red)
                     Image(systemName: "heart.fill")
                         .resizable()
-                        .frame(width: Tokens.iconWidth, height: Tokens.iconHeight)
-                        .foregroundColor(Tokens.favoriteColor)
+                        .frame(
+                            width: DesignTokens.Sizes.favoriteIconWidth,
+                            height: DesignTokens.Sizes.favoriteIconHeight
+                        )
+                        .foregroundColor(DesignTokens.Colors.favoriteColor)
                 } else {
                     // Empty heart (black outline)
                     Image(systemName: "heart")
                         .resizable()
-                        .frame(width: Tokens.iconWidth, height: Tokens.iconHeight)
-                        .foregroundColor(Tokens.defaultColor)
+                        .frame(
+                            width: DesignTokens.Sizes.favoriteIconWidth,
+                            height: DesignTokens.Sizes.favoriteIconHeight
+                        )
+                        .foregroundColor(DesignTokens.Colors.primaryText)
                 }
             }
-            .frame(width: Tokens.buttonSize, height: Tokens.buttonSize)
-            .background(Tokens.backgroundColor)
+            .frame(
+                width: DesignTokens.Sizes.favoriteButtonSize,
+                height: DesignTokens.Sizes.favoriteButtonSize
+            )
+            .background(DesignTokens.Colors.primaryBackground)
             .clipShape(Circle())
         }
         .buttonStyle(PlainButtonStyle())
-    }
-    
-    // MARK: - Tokens
-    private enum Tokens {
-        // Sizes
-        static let buttonSize: CGFloat = 36
-        static let iconWidth: CGFloat = 17
-        static let iconHeight: CGFloat = 15
-        
-        // Colors
-        static let backgroundColor: Color = .white
-        static let defaultColor: Color = .black
-        static let favoriteColor: Color = Color(red: 1, green: 0.42, blue: 0.42)
     }
 }
 

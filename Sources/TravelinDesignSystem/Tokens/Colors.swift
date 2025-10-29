@@ -60,6 +60,23 @@ public extension DesignTokens {
         public static let error: Color = Color("error", bundle: .module)
         
         public static let info: Color = Color("info", bundle: .module)
+        
+        // --- Button Specific Colors ---
+        
+        /// Secondary button background color (Light gray #F3F3F3)
+        public static let secondaryButtonBackground: Color = Color(red: 0.95, green: 0.95, blue: 0.95)
+        
+        /// Secondary button text color (Medium gray #797979)
+        public static let secondaryButtonText: Color = Color(red: 0.47, green: 0.47, blue: 0.47)
+        
+        /// Dark button background (Gray with opacity)
+        public static let darkButtonBackground: Color = Color(red: 0.32, green: 0.32, blue: 0.32, opacity: 0.8)
+        
+        /// Favorite/Heart fill color (Red/Pink)
+        public static let favoriteColor: Color = Color(red: 1, green: 0.42, blue: 0.42)
+        
+        /// Icon color for buttons (Light blue)
+        public static let iconColor: Color = Color(red: 0.14, green: 0.72, blue: 0.96)
     }
     
 }

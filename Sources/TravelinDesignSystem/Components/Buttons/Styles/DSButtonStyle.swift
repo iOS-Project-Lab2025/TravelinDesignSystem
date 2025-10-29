@@ -71,45 +71,45 @@ public struct DSButtonStyle: ButtonStyle {
     private var verticalPadding: CGFloat {
         switch size {
         case .large:
-            return 17
+            return DesignTokens.Spacing.buttonVertical
         case .medium:
-            return 12
+            return DesignTokens.Spacing.mediumSmall
         case .small:
-            return 12
+            return DesignTokens.Spacing.mediumSmall
         case .compact:
-            return 12
+            return DesignTokens.Spacing.mediumSmall
         case .menu:
-            return 20
+            return DesignTokens.Spacing.buttonHorizontal
         }
     }
     
     private var horizontalPadding: CGFloat {
         switch size {
         case .large:
-            return 20
+            return DesignTokens.Spacing.buttonHorizontal
         case .medium:
-            return 20
+            return DesignTokens.Spacing.buttonHorizontal
         case .small:
-            return 15
+            return DesignTokens.Spacing.buttonHorizontalSmall
         case .compact:
-            return 20
+            return DesignTokens.Spacing.buttonHorizontal
         case .menu:
-            return 15
+            return DesignTokens.Spacing.buttonHorizontalSmall
         }
     }
     
     private var cornerRadius: CGFloat {
         switch size {
         case .large:
-            return 15
+            return DesignTokens.CornerRadius.large
         case .medium:
-            return 15
+            return DesignTokens.CornerRadius.large
         case .small:
-            return 14
+            return DesignTokens.CornerRadius.mediumLarge
         case .compact:
-            return 6
+            return DesignTokens.CornerRadius.medium
         case .menu:
-            return 15
+            return DesignTokens.CornerRadius.large
         }
     }
     
@@ -118,11 +118,11 @@ public struct DSButtonStyle: ButtonStyle {
     private func backgroundColor(isPressed: Bool) -> Color {
         switch variant {
         case .primary:
-            let base = Color(red: 0.06, green: 0.64, blue: 0.89) // Primary blue per specs
+            let base = DesignTokens.Colors.primaryAction
             let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) // Darker pressed state
             return isPressed ? pressed : base
         case .secondary:
-            let base = Color(red: 0.95, green: 0.95, blue: 0.95) // Light gray per specs
+            let base = DesignTokens.Colors.secondaryButtonBackground
             let pressed = Color(red: 0.85, green: 0.85, blue: 0.85) // Darker pressed state
             return isPressed ? pressed : base
         case .ghost:
@@ -135,7 +135,7 @@ public struct DSButtonStyle: ButtonStyle {
             let pressed = Color(.sRGB, white: 0.95, opacity: 0.5)
             return isPressed ? pressed : .clear
         case .dark:
-            let base = Color(red: 0.32, green: 0.32, blue: 0.32, opacity: 0.8)
+            let base = DesignTokens.Colors.darkButtonBackground
             let pressed = Color(red: 0.25, green: 0.25, blue: 0.25, opacity: 0.8)
             return isPressed ? pressed : base
         case .icon:
@@ -147,19 +147,19 @@ public struct DSButtonStyle: ButtonStyle {
     private func foregroundColor(isPressed: Bool) -> Color {
         switch variant {
         case .primary:
-            return .white // #FFFFFF
+            return DesignTokens.Colors.textOnAction
         case .secondary:
-            return Color(red: 0.47, green: 0.47, blue: 0.47) // Medium gray per specs
+            return DesignTokens.Colors.secondaryButtonText
         case .ghost:
-            return .black // #000000
+            return DesignTokens.Colors.primaryText
         case .outline:
-            return .black // #000000
+            return DesignTokens.Colors.primaryText
         case .transparent:
-            return .black // #000000
+            return DesignTokens.Colors.primaryText
         case .dark:
-            return .white
+            return DesignTokens.Colors.textOnAction
         case .icon:
-            return .black // #000000
+            return DesignTokens.Colors.primaryText
         }
     }
     
@@ -168,9 +168,9 @@ public struct DSButtonStyle: ButtonStyle {
         case .primary, .secondary, .dark, .ghost, .icon:
             return .clear
         case .outline:
-            return .black
+            return DesignTokens.Colors.primaryText
         case .transparent:
-            return Color.black.opacity(0.1) // Light gray border
+            return DesignTokens.Colors.border
         }
     }
 }
