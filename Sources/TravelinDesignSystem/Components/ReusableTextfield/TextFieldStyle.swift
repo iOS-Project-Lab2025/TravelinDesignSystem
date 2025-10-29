@@ -29,7 +29,7 @@ import SwiftUI
 ///
 /// - Note: All styles include a corner radius of 12 points for consistency.
 /// - SeeAlso: `TextFieldType` for keyboard and input configurations
-enum TextFieldStyle {    /// Standard white background style.
+public enum TextFieldStyle {    /// Standard white background style.
     ///
     /// A clean, minimal style with white background and rounded corners.
     /// Ideal for primary text fields on colored or image backgrounds.

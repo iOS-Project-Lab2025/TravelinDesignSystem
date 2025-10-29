@@ -25,7 +25,7 @@ import Foundation
 ///
 /// - Note: Currently supports magnifying glass symbols for search functionality.
 /// - SeeAlso: `ConfigurableTextField`
-enum SymbolPosition {
+public enum SymbolPosition {
     /// Symbol appears on the left side, before the text input.
     ///
     /// Commonly used for search fields where the icon precedes the input area.

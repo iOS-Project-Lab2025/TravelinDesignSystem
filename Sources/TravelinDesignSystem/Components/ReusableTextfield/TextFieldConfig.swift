@@ -39,7 +39,7 @@ import SwiftUI
 ///
 /// - Note: All properties are immutable to ensure configuration consistency.
 /// - SeeAlso: `TextFieldType`
-struct TextFieldConfig {
+public struct TextFieldConfig {
     // MARK: - Properties
     /// The keyboard type to display for text input.
     ///
@@ -117,7 +117,7 @@ struct TextFieldConfig {
     ///   - textCapitalization: The automatic capitalization behavior. Defaults to `.sentences`.
     ///   - autocorrection: Whether to enable autocorrection. Defaults to `true`.
     ///   - submitLabel: The label for the keyboard's submit button. Defaults to `.done`.
-    init(
+    public init(
         keyboardType: UIKeyboardType = .default,
         contentType: UITextContentType? = nil,
         textCapitalization: TextInputAutocapitalization = .sentences,

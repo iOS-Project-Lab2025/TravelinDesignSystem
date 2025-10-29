@@ -30,7 +30,7 @@ import SwiftUI
 /// ```
 /// - Note: All configurations are optimized for iOS native input behavior.
 /// - SeeAlso: `TextFieldConfig`
-enum TextFieldType {
+public enum TextFieldType {
     /// Email address input configuration.
     ///
     /// Optimized for email entry with email keyboard layout and autocomplete support.
