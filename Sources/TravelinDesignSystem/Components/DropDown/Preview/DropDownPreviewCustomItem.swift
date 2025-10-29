@@ -56,8 +56,6 @@ struct DSDropDownCountryExample: View {
     }
 }
 
-
-
 #Preview("Drop Down Custom Items") {
     DSDropDownCountryExample()
 }

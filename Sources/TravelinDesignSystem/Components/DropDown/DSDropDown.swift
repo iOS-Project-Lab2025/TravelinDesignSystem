@@ -18,7 +18,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
     @Binding var selectedItem: Item
     let configuration: Configuration
 
-    //MARK: - Custom style configuration
+    // MARK: - Custom style configuration
     /// Configuration for styling DropDown aspect.
     public struct Configuration {
         var font: Font
@@ -28,7 +28,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
         var cornerRadius: CGFloat
         var verticalPadding: CGFloat
         var horizontalPadding: CGFloat
-        
+
         /// Initializes a new configuration for the dropdown style.
         ///
         /// - Parameters:
@@ -57,14 +57,13 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
             self.horizontalPadding = horizontalPadding
         }
 
-
         /// Default configuration used when none is provided.
         public static var `default`: Configuration {
             Configuration()
         }
     }
 
-    //MARK: - Initializer
+    // MARK: - Initializer
     /// Creates a new dropdown with a list of selectable items.
     ///
     /// - Parameters:
@@ -81,7 +80,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
         self.configuration = configuration
     }
 
-    //MARK: - Body
+    // MARK: - Body
     /// The visual representation of the dropdown component.
     public var body: some View {
         VStack {
