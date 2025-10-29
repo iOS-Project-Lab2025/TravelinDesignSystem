@@ -38,7 +38,7 @@ import SwiftUI
 ///
 /// - Note: Password fields automatically include a visibility toggle button.
 /// - SeeAlso: `TextFieldType`, `TextFieldStyle`, `TextFieldConfig`
-struct ConfigurableTextField: View {
+public struct ConfigurableTextField: View {
     // MARK: - Properties
     /// The position of an optional symbol (magnifying glass) relative to the text field.
     ///
@@ -156,7 +156,7 @@ struct ConfigurableTextField: View {
         self.onSubmit = onSubmit
     }
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             if let label = label {
                 Text(label)
