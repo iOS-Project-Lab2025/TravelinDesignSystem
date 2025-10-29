@@ -18,20 +18,19 @@ import SwiftUI
 /// ## Usage Example
 /// ```
 /// ConfigurableTextField(
-///placeHolder: "Enter your first name",
-///type: .givenName,
-///label: "First name",
-///style: .roundedGray,
-///text: $firstName
-///) {
-///focusedField = .lastName
-///}
-///.focused($focusedField, equals: .firstName)
-///```
+/// placeHolder: "Enter your first name",
+/// type: .givenName,
+/// label: "First name",
+/// style: .roundedGray,
+/// text: $firstName
+/// ) {
+/// focusedField = .lastName
+/// }
+/// .focused($focusedField, equals: .firstName)
+/// ```
 /// - Note: All configurations are optimized for iOS native input behavior.
 /// - SeeAlso: `TextFieldConfig`
 enum TextFieldType {
-    
     /// Email address input configuration.
     ///
     /// Optimized for email entry with email keyboard layout and autocomplete support.
@@ -39,7 +38,6 @@ enum TextFieldType {
     /// - Capitalization: None
     /// - Autocorrection: Disabled
     case email
-    
     /// Numeric password or ID input configuration.
     ///
     /// Designed for numeric-only credentials such as PIN codes or numeric IDs.
@@ -47,7 +45,6 @@ enum TextFieldType {
     /// - Capitalization: None
     /// - Autocorrection: Disabled
     case passwordNumbersId
-    
     /// Alphanumeric password input configuration.
     ///
     /// Configured for secure password entry with full keyboard access.
@@ -55,7 +52,6 @@ enum TextFieldType {
     /// - Capitalization: None
     /// - Autocorrection: Disabled
     case passwordLetters
-    
     /// Given name (first name) input configuration.
     ///
     /// Optimized for entering the user's first name with appropriate capitalization.
@@ -63,7 +59,6 @@ enum TextFieldType {
     /// - Capitalization: Words (capitalizes first letter of each word)
     /// - Autocorrection: Disabled
     case givenName
-    
     /// Family name (last name) input configuration.
     ///
     /// Optimized for entering the user's last name with appropriate capitalization.
@@ -71,7 +66,6 @@ enum TextFieldType {
     /// - Capitalization: Words (capitalizes first letter of each word)
     /// - Autocorrection: Disabled
     case familyName
-    
     /// Phone number input configuration.
     ///
     /// Designed for telephone number entry with numeric keypad.
@@ -79,7 +73,6 @@ enum TextFieldType {
     /// - Capitalization: None
     /// - Autocorrection: Disabled
     case phoneNumber
-    
     /// Generic numeric input configuration.
     ///
     /// Used for general numeric input such as ages, years, or quantities.
@@ -87,7 +80,6 @@ enum TextFieldType {
     /// - Capitalization: None
     /// - Autocorrection: Disabled
     case number
-    
     /// Search query input configuration.
     ///
     /// Optimized for search functionality with location-aware suggestions.
@@ -95,7 +87,6 @@ enum TextFieldType {
     /// - Capitalization: Sentences (capitalizes first letter of sentences)
     /// - Autocorrection: Enabled
     case search
-    
     /// Returns the text field configuration for the selected type.
     ///
     /// This computed property provides a complete `TextFieldConfig` instance
@@ -120,7 +111,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .next
             )
-            
+
         case .passwordNumbersId:
             return TextFieldConfig(
                 keyboardType: .numberPad,
@@ -129,7 +120,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .done
             )
-            
+
         case .passwordLetters:
             return TextFieldConfig(
                 keyboardType: .default,
@@ -138,7 +129,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .done
             )
-            
+
         case .givenName:
             return TextFieldConfig(
                 keyboardType: .default,
@@ -147,7 +138,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .next
             )
-            
+
         case .familyName:
             return TextFieldConfig(
                 keyboardType: .default,
@@ -156,7 +147,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .next
             )
-            
+
         case .phoneNumber:
             return TextFieldConfig(
                 keyboardType: .phonePad,
@@ -165,7 +156,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .continue
             )
-            
+
         case .number:
             return TextFieldConfig(
                 keyboardType: .numberPad,
@@ -174,7 +165,7 @@ enum TextFieldType {
                 autocorrection: false,
                 submitLabel: .continue
             )
-            
+
         case .search:
             return TextFieldConfig(
                 keyboardType: .default,

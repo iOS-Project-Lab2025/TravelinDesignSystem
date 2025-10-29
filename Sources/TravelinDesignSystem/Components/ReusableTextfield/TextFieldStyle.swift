@@ -29,9 +29,7 @@ import SwiftUI
 ///
 /// - Note: All styles include a corner radius of 12 points for consistency.
 /// - SeeAlso: `TextFieldType` for keyboard and input configurations
-enum TextFieldStyle {
-    
-    /// Standard white background style.
+enum TextFieldStyle {    /// Standard white background style.
     ///
     /// A clean, minimal style with white background and rounded corners.
     /// Ideal for primary text fields on colored or image backgrounds.
@@ -41,7 +39,6 @@ enum TextFieldStyle {
     /// - Corner radius: 12pt
     /// - Border: None
     case `default`
-    
     /// Subtle gray background style.
     ///
     /// A low-contrast style using the system gray background color.
@@ -51,19 +48,7 @@ enum TextFieldStyle {
     /// - Background: System gray (.systemGray6)
     /// - Corner radius: 12pt
     /// - Border: None
-    case roundedGray
-    
-    /// White background with visible border style.
-    ///
-    /// A defined style with a visible stroke outline for enhanced visibility.
-    /// Recommended for forms requiring clear field separation or emphasis.
-    ///
-    /// **Visual Characteristics:**
-    /// - Background: White
-    /// - Corner radius: 12pt
-    /// - Border: 1pt stroke in system gray (.systemGray4)
     case outlined
-    
     /// Applies the selected style to the provided content view.
     ///
     /// This method wraps the given content with the appropriate styling modifiers,
@@ -77,10 +62,10 @@ enum TextFieldStyle {
     /// ## Usage Example
     /// ```
     /// style.apply(
-    ///HStack {
-    ///Content: View
-    ///}
-    ///)
+    /// HStack {
+    /// Content: View
+    /// }
+    /// )
     /// ```
     ///
     /// - Parameter content: The view to be styled, typically a `TextField` or `SecureField`.
@@ -94,24 +79,17 @@ enum TextFieldStyle {
         case .default:
             content
                 .padding()
-                .background(Color.white)
-                .cornerRadius(12)
-                
-        case .roundedGray:
-            content
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(12)
-                
+                .background(DesignTokens.Colors.primaryBackground)
+                .cornerRadius(DesignTokens.CornerRadius.large)
+
         case .outlined:
             content
                 .padding()
-                .background(Color.white)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: DesignTokens.CornerRadius.large)
                         .stroke(Color(.systemGray4), lineWidth: 1)
                 )
-                .cornerRadius(12)
+                .cornerRadius(DesignTokens.CornerRadius.large)
         }
     }
 }

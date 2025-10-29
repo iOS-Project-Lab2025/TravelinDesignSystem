@@ -40,9 +40,7 @@ import SwiftUI
 /// - Note: All properties are immutable to ensure configuration consistency.
 /// - SeeAlso: `TextFieldType`
 struct TextFieldConfig {
-    
     // MARK: - Properties
-    
     /// The keyboard type to display for text input.
     ///
     /// Determines which keyboard layout appears when the text field becomes active.
@@ -50,7 +48,6 @@ struct TextFieldConfig {
     ///
     /// - SeeAlso: `UIKeyboardType`
     let keyboardType: UIKeyboardType
-    
     /// The semantic meaning of the text input content.
     ///
     /// Enables AutoFill, password management, and predictive text features by indicating
@@ -60,7 +57,6 @@ struct TextFieldConfig {
     ///
     /// - SeeAlso: `UITextContentType`
     let contentType: UITextContentType?
-    
     /// The automatic capitalization behavior for text input.
     ///
     /// Controls when and how text is automatically capitalized:
@@ -71,13 +67,11 @@ struct TextFieldConfig {
     ///
     /// - SeeAlso: `TextInputAutocapitalization`
     let textCapitalization: TextInputAutocapitalization
-    
     /// Indicates whether autocorrection should be enabled.
     ///
     /// When `true`, the system suggests corrections and replacements as the user types.
     /// When `false`, autocorrection is disabled for precise input (e.g., passwords, codes).
     let autocorrection: Bool
-    
     /// The label displayed on the keyboard's return/submit button.
     ///
     /// Provides contextual feedback about what happens when the user taps the return key.
@@ -85,9 +79,7 @@ struct TextFieldConfig {
     ///
     /// - SeeAlso: `SubmitLabel`
     let submitLabel: SubmitLabel
-    
     // MARK: - Initialization
-    
     /// Creates a new text field configuration with the specified input behavior settings.
     ///
     /// All parameters have sensible defaults suitable for general text input.

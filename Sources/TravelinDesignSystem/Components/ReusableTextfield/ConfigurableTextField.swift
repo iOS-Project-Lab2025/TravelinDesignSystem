@@ -37,21 +37,17 @@ import SwiftUI
 /// - Note: Password fields automatically include a visibility toggle button.
 /// - SeeAlso: `TextFieldType`, `TextFieldStyle`, `TextFieldConfig`
 struct ConfigurableTextField: View {
-    
     // MARK: - Properties
-    
     /// The position of an optional symbol (magnifying glass) relative to the text field.
     ///
     /// - `.left`: Symbol appears before the text input
     /// - `.right`: Symbol appears after the text input
     /// - `.none`: No symbol is displayed
     let symbolPosition: SymbolPosition
-    
     /// The placeholder text displayed when the field is empty.
     ///
     /// Set to `nil` to display no placeholder text.
     let placeHolder: String?
-    
     /// The input type that determines keyboard and behavior configuration.
     ///
     /// This type automatically configures keyboard layout, content type,
@@ -59,20 +55,17 @@ struct ConfigurableTextField: View {
     ///
     /// - SeeAlso: `TextFieldType`
     let type: TextFieldType
-    
     /// An optional label displayed above the text field.
     ///
     /// When provided, appears as secondary text above the input field.
     /// Set to `nil` to omit the label.
     let label: String?
-    
     /// The visual styling applied to the text field.
     ///
     /// Determines background color, borders, and corner radius.
     ///
     /// - SeeAlso: `TextFieldStyle`
     let style: TextFieldStyle
-    
     /// Controls whether password-type fields display their content securely.
     ///
     /// When `true`, password fields show dots instead of characters.
@@ -80,12 +73,10 @@ struct ConfigurableTextField: View {
     ///
     /// - Note: Only affects `.passwordLetters` and `.passwordNumbersId` field types.
     @State private var isSecure = true
-    
     /// A binding to the text field's current value.
     ///
     /// Updates bidirectionally as the user types or the value changes programmatically.
     @Binding var text: String
-    
     /// An optional closure executed when the user submits the field.
     ///
     /// Triggered when:
@@ -94,7 +85,6 @@ struct ConfigurableTextField: View {
     ///
     /// Set to `nil` if no action should occur on submit.
     var onSubmit: (() -> Void)?
-    
     /// The computed configuration based on the selected field type.
     ///
     /// Provides keyboard type, content type, capitalization, autocorrection,
@@ -104,9 +94,7 @@ struct ConfigurableTextField: View {
     private var config: TextFieldConfig {
         type.config
     }
-    
     // MARK: - Initialization
-    
     /// Creates a new configurable text field with the specified parameters.
     ///
     /// ## Parameter Descriptions
@@ -156,7 +144,6 @@ struct ConfigurableTextField: View {
         style: TextFieldStyle = .default,
         text: Binding<String>,
         onSubmit: (() -> Void)? = nil
-       
     ) {
         self.symbolPosition = symbolPosition
         self.placeHolder = placeHolder
@@ -165,11 +152,8 @@ struct ConfigurableTextField: View {
         self.style = style
         self._text = text
         self.onSubmit = onSubmit
-        
     }
-    
     // MARK: - Body
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             if let label = label {
@@ -210,12 +194,13 @@ struct ConfigurableTextField: View {
                                 }
                         }
                         if self.type == .passwordNumbersId || self.type == .passwordLetters {
-                            Button(action: { isSecure.toggle() }) {
+                            Button {
+                                isSecure.toggle()
+                            } label: {
                                 Image(systemName: isSecure ? "eye" : "eye.slash")
                                     .foregroundColor(.secondary)
                             }
                         }
-                        
                         if symbolPosition == .right {
                             Image(systemName: "magnifyingglass")
                                     .foregroundColor(.gray)
@@ -226,21 +211,22 @@ struct ConfigurableTextField: View {
                         }
                     }
                 }
-               
             )
-            
-            
         }
     }
 }
 
 #Preview {
-    ConfigurableTextField(
-        placeHolder: "Enter your email",
-        type: .email,
-        label: "Email",
-        style: .roundedGray,
-        text: .constant("")
-    )
-    .padding()
+    ZStack {
+        Color.black
+            .ignoresSafeArea()
+        ConfigurableTextField(
+            placeHolder: "Enter your email",
+            type: .email,
+            label: "Email",
+            style: .default,
+            text: .constant("")
+        )
+        .padding()
+    }
 }

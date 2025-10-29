@@ -26,17 +26,14 @@ import Foundation
 /// - Note: Currently supports magnifying glass symbols for search functionality.
 /// - SeeAlso: `ConfigurableTextField`
 enum SymbolPosition {
-    
     /// Symbol appears on the left side, before the text input.
     ///
     /// Commonly used for search fields where the icon precedes the input area.
     case left
-    
     /// Symbol appears on the right side, after the text input.
     ///
     /// Alternative placement for search icons or action buttons.
     case right
-    
     /// No symbol is displayed.
     ///
     /// Default option for text fields that don't require visual indicators.
