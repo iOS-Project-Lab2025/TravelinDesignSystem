@@ -11,7 +11,7 @@ import SwiftUI
 @available(iOS 17.0, macOS 13.0, *)
 
 // MARK: - Example: Country with code and flag
-public struct Country: DropDownDisplayable {
+internal struct Country: DropDownDisplayable {
     public let id = UUID()
     public let name: String
     public let code: String
@@ -33,11 +33,11 @@ public struct Country: DropDownDisplayable {
 
     // View when the dropdown is opened
     public func listView() -> some View {
-            Text("\(name) (\(code))")
+            Text("\(flag) (\(code))")
     }
 }
 
-struct DSDropDownCountryExample: View {
+internal struct DSDropDownCountryExample: View {
     @State private var selected = Country(name: "Chile", code: "+56", flag: "🇨🇱")
 
     let countries = [
