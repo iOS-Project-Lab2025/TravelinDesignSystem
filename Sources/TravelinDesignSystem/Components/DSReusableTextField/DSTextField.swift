@@ -38,7 +38,7 @@ import SwiftUI
 ///
 /// - Note: Password fields automatically include a visibility toggle button.
 /// - SeeAlso: `TextFieldType`, `TextFieldStyle`, `TextFieldConfig`
-public struct ConfigurableTextField: View {
+public struct DSTextField: View {
     // MARK: - Properties
     /// The position of an optional symbol (magnifying glass) relative to the text field.
     ///
@@ -160,15 +160,15 @@ public struct ConfigurableTextField: View {
         VStack(alignment: .leading, spacing: 8) {
             if let label = label {
                 Text(label)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .font(DesignTokens.Typography.bodyLargeRegular)
+                    .foregroundColor(DesignTokens.Colors.primaryText)
             }
             style.apply(
                 HStack {
                     Group {
                         if symbolPosition == .left {
                             Image(systemName: "magnifyingglass")
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(DesignTokens.Colors.secondaryText)
                                     .bold()
                                     .onTapGesture {
                                         onSubmit?()
@@ -200,12 +200,12 @@ public struct ConfigurableTextField: View {
                                 isSecure.toggle()
                             } label: {
                                 Image(systemName: isSecure ? "eye" : "eye.slash")
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(DesignTokens.Colors.primaryText)
                             }
                         }
                         if symbolPosition == .right {
                             Image(systemName: "magnifyingglass")
-                                    .foregroundColor(.gray)
+                                .foregroundColor(DesignTokens.Colors.secondaryText)
                                     .bold()
                                     .onTapGesture {
                                         onSubmit?()
@@ -222,13 +222,28 @@ public struct ConfigurableTextField: View {
     ZStack {
         Color.white
             .ignoresSafeArea()
-        ConfigurableTextField(
-            placeHolder: "Enter your phone",
-            type: .phoneNumber,
-            label: "Phone",
-            style: .default,
-            text: .constant("")
-        )
+        VStack {
+            DSTextField(
+                placeHolder: "Enter your phone",
+                type: .phoneNumber,
+                label: "Phone",
+                style: .default,
+                text: .constant("")
+            )
+            DSTextField(
+                placeHolder: "Enter your password",
+                type: .passwordLetters,
+                label: "Password",
+                style: .outlined,
+                text: .constant("")
+            )
+            DSTextField(
+                symbolPosition: .left,
+                type: .search,
+                style: .outlined,
+                text: .constant("")
+            )
+        }
         .padding()
     }
 }
