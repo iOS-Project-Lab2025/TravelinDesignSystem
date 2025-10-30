@@ -77,6 +77,9 @@ public extension DesignTokens {
         
         /// Icon color for buttons (Light blue)
         public static let iconColor: Color = Color(red: 0.14, green: 0.72, blue: 0.96)
+        
+        /// Light border color for transparent buttons
+        public static let lightBorder: Color = Color.black.opacity(0.1)
     }
     
 }

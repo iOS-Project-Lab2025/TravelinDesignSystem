@@ -170,7 +170,7 @@ public struct DSButtonStyle: ButtonStyle {
         case .outline:
             return DesignTokens.Colors.primaryText
         case .transparent:
-            return DesignTokens.Colors.border
+            return DesignTokens.Colors.lightBorder
         }
     }
 }
