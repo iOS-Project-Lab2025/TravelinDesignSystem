@@ -118,29 +118,18 @@ public struct DSButtonStyle: ButtonStyle {
     private func backgroundColor(isPressed: Bool) -> Color {
         switch variant {
         case .primary:
-            let base = DesignTokens.Colors.primaryAction
-            let pressed = Color(red: 0.05, green: 0.58, blue: 0.82) 
-            return isPressed ? pressed : base
+            return isPressed ? DesignTokens.Colors.primaryActionPressed : DesignTokens.Colors.primaryAction
         case .secondary:
-            let base = DesignTokens.Colors.secondaryButtonBackground
-            let pressed = Color(red: 0.85, green: 0.85, blue: 0.85) 
-            return isPressed ? pressed : base
-        case .ghost:
-            let pressed = Color(.sRGB, white: 0.95, opacity: 1)
-            return isPressed ? pressed : .white
-        case .outline:
-            let pressed = Color(.sRGB, white: 0.95, opacity: 1)
-            return isPressed ? pressed : .white
+            return isPressed ? DesignTokens.Colors.secondaryButtonBackgroundPressed : DesignTokens.Colors.secondaryButtonBackground
+        case .ghost, .outline:
+            return isPressed ? DesignTokens.Colors.lightBackgroundPressed : DesignTokens.Colors.primaryBackground
         case .transparent:
             let pressed = Color(.sRGB, white: 0.95, opacity: 0.5)
             return isPressed ? pressed : .clear
         case .dark:
-            let base = DesignTokens.Colors.darkButtonBackground
-            let pressed = Color(red: 0.25, green: 0.25, blue: 0.25, opacity: 0.8)
-            return isPressed ? pressed : base
+            return isPressed ? DesignTokens.Colors.darkButtonBackgroundPressed : DesignTokens.Colors.darkButtonBackground
         case .icon:
-            let pressed = Color.black.opacity(0.1)
-            return isPressed ? pressed : .clear
+            return isPressed ? DesignTokens.Colors.lightBorder : .clear
         }
     }
     

@@ -80,6 +80,20 @@ public extension DesignTokens {
         
         /// Light border color for transparent buttons
         public static let lightBorder: Color = Color("lightBorder", bundle: .module)
+        
+        // --- Button Pressed States ---
+        
+        /// Primary button pressed state (Darker blue)
+        public static let primaryActionPressed: Color = Color("primaryActionPressed", bundle: .module)
+        
+        /// Secondary button pressed state (Darker gray)
+        public static let secondaryButtonBackgroundPressed: Color = Color("secondaryButtonBackgroundPressed", bundle: .module)
+        
+        /// Light background pressed state (Light gray for ghost/outline buttons)
+        public static let lightBackgroundPressed: Color = Color("lightBackgroundPressed", bundle: .module)
+        
+        /// Dark button pressed state (Darker gray with opacity)
+        public static let darkButtonBackgroundPressed: Color = Color("darkButtonBackgroundPressed", bundle: .module)
     }
     
 }
