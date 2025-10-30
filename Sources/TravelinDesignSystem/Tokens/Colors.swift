@@ -64,22 +64,22 @@ public extension DesignTokens {
         // --- Button Specific Colors ---
         
         /// Secondary button background color (Light gray #F3F3F3)
-        public static let secondaryButtonBackground: Color = Color(red: 0.95, green: 0.95, blue: 0.95)
+        public static let secondaryButtonBackground: Color = Color("secondaryButtonBackground", bundle: .module)
         
         /// Secondary button text color (Medium gray #797979)
-        public static let secondaryButtonText: Color = Color(red: 0.47, green: 0.47, blue: 0.47)
+        public static let secondaryButtonText: Color = Color("secondaryButtonText", bundle: .module)
         
         /// Dark button background (Gray with opacity)
-        public static let darkButtonBackground: Color = Color(red: 0.32, green: 0.32, blue: 0.32, opacity: 0.8)
+        public static let darkButtonBackground: Color = Color("darkButtonBackground", bundle: .module)
         
         /// Favorite/Heart fill color (Red/Pink)
-        public static let favoriteColor: Color = Color(red: 1, green: 0.42, blue: 0.42)
+        public static let favoriteColor: Color = Color("favoriteColor", bundle: .module)
         
         /// Icon color for buttons (Light blue)
-        public static let iconColor: Color = Color(red: 0.14, green: 0.72, blue: 0.96)
+        public static let iconColor: Color = Color("iconColor", bundle: .module)
         
         /// Light border color for transparent buttons
-        public static let lightBorder: Color = Color.black.opacity(0.1)
+        public static let lightBorder: Color = Color("lightBorder", bundle: .module)
     }
     
 }
