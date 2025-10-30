@@ -21,6 +21,9 @@ let package = Package(
     targets: [
         .target(
             name: "TravelinDesignSystem",
+            resources: [
+                .process("Media.xcassets")
+            ],
             plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "swiftlintplugins")]
         ),
     ]

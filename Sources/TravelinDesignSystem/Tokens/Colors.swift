@@ -60,6 +60,40 @@ public extension DesignTokens {
         public static let error: Color = Color("error", bundle: .module)
         
         public static let info: Color = Color("info", bundle: .module)
+        
+        // --- Button Specific Colors ---
+        
+        /// Secondary button background color (Light gray #F3F3F3)
+        public static let secondaryButtonBackground: Color = Color("secondaryButtonBackground", bundle: .module)
+        
+        /// Secondary button text color (Medium gray #797979)
+        public static let secondaryButtonText: Color = Color("secondaryButtonText", bundle: .module)
+        
+        /// Dark button background (Gray with opacity)
+        public static let darkButtonBackground: Color = Color("darkButtonBackground", bundle: .module)
+        
+        /// Favorite/Heart fill color (Red/Pink)
+        public static let favoriteColor: Color = Color("favoriteColor", bundle: .module)
+        
+        /// Icon color for buttons (Light blue)
+        public static let iconColor: Color = Color("iconColor", bundle: .module)
+        
+        /// Light border color for transparent buttons
+        public static let lightBorder: Color = Color("lightBorder", bundle: .module)
+        
+        // --- Button Pressed States ---
+        
+        /// Primary button pressed state (Darker blue)
+        public static let primaryActionPressed: Color = Color("primaryActionPressed", bundle: .module)
+        
+        /// Secondary button pressed state (Darker gray)
+        public static let secondaryButtonBackgroundPressed: Color = Color("secondaryButtonBackgroundPressed", bundle: .module)
+        
+        /// Light background pressed state (Light gray for ghost/outline buttons)
+        public static let lightBackgroundPressed: Color = Color("lightBackgroundPressed", bundle: .module)
+        
+        /// Dark button pressed state (Darker gray with opacity)
+        public static let darkButtonBackgroundPressed: Color = Color("darkButtonBackgroundPressed", bundle: .module)
     }
     
 }
