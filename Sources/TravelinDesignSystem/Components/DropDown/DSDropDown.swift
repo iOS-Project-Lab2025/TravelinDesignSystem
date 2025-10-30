@@ -40,6 +40,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
 ///   - horizontalPadding: Horizontal padding for the content inside.
     public struct Configuration {
         var font: Font
+        var backgroundColor: Color
         var textColor: Color
         var borderColor: Color
         var borderWidth: CGFloat
@@ -51,6 +52,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
 /// Each parameter has a predefined default value.
         public init(
             font: Font = DesignTokens.Typography.bodyLargeMedium,
+            backgroundColor: Color = .clear,
             textColor: Color = DesignTokens.Colors.primaryText,
             borderColor: Color = DesignTokens.Colors.border,
             borderWidth: CGFloat = 1,
@@ -59,6 +61,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
             horizontalPadding: CGFloat = DesignTokens.Spacing.medium
         ) {
             self.font = font
+            self.backgroundColor = backgroundColor
             self.textColor = textColor
             self.borderColor = borderColor
             self.borderWidth = borderWidth
@@ -157,6 +160,8 @@ Example 2: Items as Arrya of strings and custom styling
             }
             .padding(.vertical, configuration.verticalPadding)
             .padding(.horizontal, configuration.horizontalPadding)
+            .background(configuration.backgroundColor)
+            .clipShape(RoundedRectangle(cornerRadius: configuration.cornerRadius))
             .overlay {
                 RoundedRectangle(cornerRadius: configuration.cornerRadius)
                     .stroke(configuration.borderColor, lineWidth: configuration.borderWidth)

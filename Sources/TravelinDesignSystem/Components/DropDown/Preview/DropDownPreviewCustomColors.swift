@@ -16,6 +16,7 @@ import SwiftUI
             selectedItem: .constant("+569"),
             configuration: .init(
                 font: DesignTokens.Typography.heading1,
+                backgroundColor: DesignTokens.Colors.warning,
                 textColor: DesignTokens.Colors.error,
                 borderColor: DesignTokens.Colors.error,
             )
