@@ -1,5 +1,5 @@
 //
-//  ConfigurableTextField.swift
+//  DSTextField.swift
 //  TestFormInput
 //
 //  Created by Rodolfo Gonzalez on 27-10-25.
@@ -24,7 +24,7 @@ import SwiftUI
 ///
 /// ## Usage Example
 /// ```swift
-/// ConfigurableTextField(
+/// DSTextField(
 /// placeHolder: "Enter your password",
 /// type: .passwordLetters,
 /// label: "Password",
@@ -106,13 +106,13 @@ public struct DSTextField: View {
     /// ## Usage Examples
     /// ```swift
     /// // Minimal email field
-    /// ConfigurableTextField(
+    /// DSTextField(
     ///     type: .email,
     ///     text: $email
     /// )
     ///
     /// // Search field with symbol
-    /// ConfigurableTextField(
+    /// DSTextField(
     ///     symbolPosition: .left,
     ///     placeHolder: "Search...",
     ///     type: .search,
@@ -121,7 +121,7 @@ public struct DSTextField: View {
     /// )
     ///
     /// // Password field with label
-    /// ConfigurableTextField(
+    /// DSTextField(
     ///     placeHolder: "Enter password",
     ///     type: .passwordLetters,
     ///     label: "Password",

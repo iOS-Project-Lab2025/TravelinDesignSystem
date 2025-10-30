@@ -17,7 +17,7 @@ import SwiftUI
 ///
 /// ## Usage Example
 /// ```
-/// ConfigurableTextField(
+/// DSTextField(
 /// placeHolder: "Enter your first name",
 /// type: .givenName,
 /// label: "First name",

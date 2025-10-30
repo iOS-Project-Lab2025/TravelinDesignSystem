@@ -11,12 +11,12 @@ import Foundation
 
 /// Defines the placement of an optional symbol within a text field.
 ///
-/// Used with `ConfigurableTextField` to add visual indicators (such as a magnifying glass)
+/// Used with `DSTextField` to add visual indicators (such as a magnifying glass)
 /// before or after the text input area.
 ///
 /// ## Usage Example
 /// ```swift
-/// ConfigurableTextField(
+/// DSTextField(
 ///     symbolPosition: .left,
 ///     type: .search,
 ///     text: $searchText
@@ -24,7 +24,7 @@ import Foundation
 /// ```
 ///
 /// - Note: Currently supports magnifying glass symbols for search functionality.
-/// - SeeAlso: `ConfigurableTextField`
+/// - SeeAlso: `DSTextField`
 public enum SymbolPosition {
     /// Symbol appears on the left side, before the text input.
     ///
