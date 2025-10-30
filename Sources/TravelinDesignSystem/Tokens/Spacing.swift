@@ -24,6 +24,12 @@ public extension DesignTokens {
         public static let large: CGFloat = 32.0
         /// 48 pt
         public static let extraLarge: CGFloat = 48.0
+        
+        /// 17 pt (Vertical padding for standard buttons)
+        public static let buttonVertical: CGFloat = 17.0
+        
+        /// 20 pt (Horizontal padding for standar buttons)
+        public static let buttonHorizontal: CGFloat = 20.0
     }
     
 }

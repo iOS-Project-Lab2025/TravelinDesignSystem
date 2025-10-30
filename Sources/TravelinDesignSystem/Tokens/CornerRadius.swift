@@ -8,12 +8,12 @@
 import CoreGraphics
 
 public extension DesignTokens {
-    
+
     enum CornerRadius {
-        /// 8 pt (Standard for buttons, cards)
-        public static let medium: CGFloat = 8.0
-        /// 16 pt (For larger elements like modals)
-        public static let large: CGFloat = 16.0
+        /// 6 pt (For tiny elements or specific sections)
+        public static let medium: CGFloat = 6.0
+        /// 15 pt (Standard for buttons y principal cards, según Figma)
+        public static let large: CGFloat = 15.0
         /// For creating circular elements
         public static let full: CGFloat = 9999.0
     }
