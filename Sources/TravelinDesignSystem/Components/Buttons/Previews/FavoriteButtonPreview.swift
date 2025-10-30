@@ -28,12 +28,9 @@ import SwiftUI
                     .font(.caption)
             }
         }
-        
         Divider().padding(.vertical, 10)
-        
         Text("Interactive Example")
             .font(.headline)
-        
         InteractiveFavoriteExample()
     }
     .padding()
