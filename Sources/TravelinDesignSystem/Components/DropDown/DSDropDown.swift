@@ -54,7 +54,7 @@ public struct DSDropDown<Item: DropDownDisplayable>: View {
             textColor: Color = DesignTokens.Colors.primaryText,
             borderColor: Color = DesignTokens.Colors.border,
             borderWidth: CGFloat = 1,
-            cornerRadius: CGFloat = 15,
+            cornerRadius: CGFloat = DesignTokens.CornerRadius.large,
             verticalPadding: CGFloat = DesignTokens.Spacing.medium,
             horizontalPadding: CGFloat = DesignTokens.Spacing.medium
         ) {
