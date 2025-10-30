@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-// MARK: - Reusable Text Field Component
+// MARK: - DSTextField Component
 
 /// A highly configurable text field component with built-in styling and behavior options.
 ///
