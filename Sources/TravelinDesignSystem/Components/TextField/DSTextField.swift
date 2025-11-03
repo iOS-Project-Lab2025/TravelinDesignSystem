@@ -45,29 +45,29 @@ public struct DSTextField: View {
     /// - `.left`: Symbol appears before the text input
     /// - `.right`: Symbol appears after the text input
     /// - `.none`: No symbol is displayed
-    let symbolPosition: SymbolPosition
+    private let symbolPosition: SymbolPosition
     /// The placeholder text displayed when the field is empty.
     ///
     /// Set to `nil` to display no placeholder text.
-    let placeHolder: String?
+    private let placeHolder: String?
     /// The input type that determines keyboard and behavior configuration.
     ///
     /// This type automatically configures keyboard layout, content type,
     /// capitalization, autocorrection, and submit button label.
     ///
     /// - SeeAlso: `TextFieldType`
-    let type: TextFieldType
+    private let type: TextFieldType
     /// An optional label displayed above the text field.
     ///
     /// When provided, appears as secondary text above the input field.
     /// Set to `nil` to omit the label.
-    let label: String?
+    private let label: String?
     /// The visual styling applied to the text field.
     ///
     /// Determines background color, borders, and corner radius.
     ///
     /// - SeeAlso: `TextFieldStyle`
-    let style: TextFieldStyle
+    private let style: TextFieldStyle
     /// Controls whether password-type fields display their content securely.
     ///
     /// When `true`, password fields show dots instead of characters.
@@ -86,7 +86,7 @@ public struct DSTextField: View {
     /// - The user taps the magnifying glass symbol (if present)
     ///
     /// Set to `nil` if no action should occur on submit.
-    var onSubmit: (() -> Void)?
+    private var onSubmit: (() -> Void)?
     /// The computed configuration based on the selected field type.
     ///
     /// Provides keyboard type, content type, capitalization, autocorrection,
