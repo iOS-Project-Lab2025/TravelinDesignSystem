@@ -41,6 +41,12 @@ public extension DesignTokens {
         // --- Other ---
         /// 12pt, Medium. (Used for links)
         public static let link: Font = .system(size: 12, weight: .medium)
+        
+        /// 15pt, Medium. (Used for menu buttons)
+        public static let buttonMenu: Font = .system(size: 15, weight: .medium)
+        
+        /// 12pt, Semibold. (Used for outline buttons)
+        public static let buttonOutline: Font = .system(size: 12, weight: .semibold)
     }
     
 }
