@@ -14,14 +14,14 @@ import SwiftUI
     VStack(spacing: 20) {
         Text("Favorite Button States")
             .font(.headline)
-        
+
         HStack(spacing: 30) {
             VStack {
                 DSFavoriteButton(isFavorite: .constant(false))
                 Text("Empty")
                     .font(.caption)
             }
-            
+
             VStack {
                 DSFavoriteButton(isFavorite: .constant(true))
                 Text("Filled")
@@ -40,7 +40,7 @@ import SwiftUI
 @available(iOS 17.0, macOS 13.0, *)
 private struct InteractiveFavoriteExample: View {
     @State private var isFavorite = false
-    
+
     var body: some View {
         VStack(spacing: 10) {
             DSFavoriteButton(isFavorite: $isFavorite)

@@ -9,5 +9,5 @@ import CoreGraphics
 import SwiftUI
 
 public enum DesignTokens {
-    
+
 }

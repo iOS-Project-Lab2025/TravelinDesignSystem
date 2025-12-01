@@ -41,12 +41,11 @@ public struct DSButton: View {
     private let fullWidth: Bool
     private let fixedWidth: CGFloat?
     private let action: () -> Void
-    
+
     public enum IconPosition {
         case leading
         case trailing
     }
-
 
     public init(
         title: String,
@@ -69,7 +68,7 @@ public struct DSButton: View {
         self.fixedWidth = fixedWidth
         self.action = action
     }
-    
+
     // Initializer for icon-only button
     public init(
         icon: Image,
@@ -102,7 +101,7 @@ public struct DSButton: View {
         ))
         .accessibility(label: Text(title ?? "Button"))
     }
-    
+
     @ViewBuilder
     private var buttonContent: some View {
         if let trailingIcon = trailingIcon, let title = title, let icon = icon {
@@ -137,27 +136,32 @@ public struct DSButton: View {
             icon.foregroundColor(iconColor)
         }
     }
-    
+
     private var iconColor: Color {
         // Icon color based on button variant
         switch variant {
         case .transparent, .icon:
             return DesignTokens.Colors.primaryText
+
         default:
             return DesignTokens.Colors.iconColor
         }
     }
-    
+
     private var iconSpacing: CGFloat {
         switch size {
         case .large:
             return DesignTokens.Spacing.small
+
         case .medium:
             return DesignTokens.Spacing.small
+
         case .small:
             return DesignTokens.Spacing.iconSpacingSmall
+
         case .compact:
             return DesignTokens.Spacing.iconSpacingSmall
+
         case .menu:
             return DesignTokens.Spacing.iconSpacingMenu
         }

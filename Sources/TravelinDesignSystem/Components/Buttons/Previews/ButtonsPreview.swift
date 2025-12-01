@@ -15,17 +15,17 @@ import SwiftUI
 
         Text("Buttons")
             .font(.title).fontWeight(.bold)
-        
+
         Text("1) Text")
             .font(.headline)
-        
+
         HStack(spacing: 17) {
             DSButton(title: "Book Now", variant: .primary, size: .large) { }
             DSButton(title: "Back", variant: .secondary, size: .large) { }
         }
-        
+
         DSButton(title: "Back to home", variant: .ghost, size: .large, fixedWidth: 295) { }
-        
+
         HStack(spacing: 17) {
             DSButton(
                 title: "+100 Photos",
@@ -33,7 +33,7 @@ import SwiftUI
                 size: .compact,
                 fixedWidth: 73
             ) { }
-            
+
             DSButton(
                 title: "See all +20 photos",
                 variant: .outline,
@@ -41,10 +41,10 @@ import SwiftUI
                 fixedWidth: 156
             ) { }
         }
-        
+
         Text("2) Text + Icon")
             .font(.headline)
-        
+
         DSButton(
             title: "Oversea",
             icon: Image(systemName: "airplane"),
@@ -52,10 +52,10 @@ import SwiftUI
             size: .small,
             fixedWidth: 90
         ) { }
-        
+
         Text("3) Icon + Text + Icon")
             .font(.headline)
-        
+
         DSButton(
             title: "Edit profile",
             icon: Image(systemName: "person.circle"),
@@ -64,11 +64,10 @@ import SwiftUI
             size: .menu,
             fixedWidth: 323
         ) { }
-        
-        
+
         Text("4) Icon")
             .font(.headline)
-        
+
         HStack(spacing: 20) {
             DSFavoriteButton(isFavorite: .constant(false))
             DSFavoriteButton(isFavorite: .constant(true))
@@ -79,7 +78,7 @@ import SwiftUI
             ) { }
             DSButton(icon: Image(systemName: "chevron.right"), variant: .icon, size: .medium) {}
         }
-        
+
     }
     .padding()
     .background(Color(red: 0.92, green: 0.92, blue: 0.92))

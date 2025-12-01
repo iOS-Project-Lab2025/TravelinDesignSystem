@@ -19,5 +19,5 @@ public extension DesignTokens {
         /// For creating circular elements
         public static let full: CGFloat = 9999.0
     }
-    
+
 }
