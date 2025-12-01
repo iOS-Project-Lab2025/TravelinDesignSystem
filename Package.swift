@@ -7,16 +7,16 @@ let package = Package(
     name: "TravelinDesignSystem",
     platforms: [
         .iOS(.v17),
-        .macOS(.v13),
+        .macOS(.v13)
     ],
     products: [
         .library(
             name: "TravelinDesignSystem",
             targets: ["TravelinDesignSystem"]
-        ),
+        )
     ],
     dependencies: [
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins.git", from: "0.62.1"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins.git", from: "0.62.1")
     ],
     targets: [
         .target(
@@ -25,6 +25,6 @@ let package = Package(
                 .process("Media.xcassets")
             ],
             plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "swiftlintplugins")]
-        ),
+        )
     ]
 )

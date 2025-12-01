@@ -19,17 +19,18 @@ import SwiftUI
 @available(iOS 17.0, macOS 13.0, *)
 public struct DSFavoriteButton: View {
     @Binding private var isFavorite: Bool
-    
+
     public init(isFavorite: Binding<Bool>) {
         self._isFavorite = isFavorite
     }
-    
+
     public var body: some View {
-        Button(action: {
+        Button {
             withAnimation(.easeInOut(duration: 0.2)) {
                 isFavorite.toggle()
             }
-        }) {
+        }
+        label: {
             ZStack {
                 if isFavorite {
                     // Filled heart (red)
