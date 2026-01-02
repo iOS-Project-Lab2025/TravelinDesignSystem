@@ -43,11 +43,10 @@ public extension DesignTokens {
         public static let secondaryBackground: Color = Color("secondaryBackground", bundle: .module)
 
         public static let tertiaryBackground: Color = Color("tertiaryBackground", bundle: .module)
-        
-        public static let gradientColor1 : Color = Color("gradientBackground1", bunlde: .module)
-        
-        public static let gradientColor2 : Color = Color("gradientBackground2", bunlde: .module)
-        
+
+        public static let gradientColor1: Color = Color("gradientBackground1", bundle: .module)
+
+        public static let gradientColor2: Color = Color("gradientBackground2", bundle: .module)
 
         // --- UI / Borders ---
 
